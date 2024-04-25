@@ -47,12 +47,15 @@
                         <!-- <span class="bg-info-600 py-2 px-3 text-xs rounded-full text-white">100% Free and Risk Free</span> -->
                         <h1 class="mt-8 text-wrap text-4xl md:text-3xl font-semibold text-gray-950 dark:text-white xl:text-5xl xl:[line-height:1.125]">Find unfollowers without using a 3rd party app</h1>
                         <a href="#help" class="text-white text-xs font-semibold underline">How to use?</a>
-                        <div class="mt-8 flex gap-[24px]">
+                        <div class="mt-8 flex flex-col md:flex-row md:flex gap-[24px]">
                             <div class="flex flex-col h-full w-full">
                                 <span id="followers" class="text-white flex items-center text-sm bg-primary-600 shadow-inner shadow-white/10 rounded-t-md p-3">
                                     Followers
                                     <span class="bg-green-700 px-2 py-1 rounded-full text-xs ml-2">json, html</span>
                                     <span id="followers-count" class="ml-auto bg-green-500 py-1 px-2 rounded-full">0</span>
+                                    <button id="followers-clear" class="bg-primary-500 text-white rounded-full py-1 px-2 ml-2">
+                                        Clear
+                                    </button>
                                 </span>
                                 <textarea id="followers-textbox" rows="10" placeholder="Paste your JSON or HTML code here" class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md text-sm font-mono"></textarea>
                             </div>
@@ -61,14 +64,17 @@
                                     Followings
                                     <span class="bg-blue-700 px-2 py-1 rounded-full text-xs ml-2">json, html</span>
                                     <span id="followings-count" class="ml-auto bg-blue-500 py-1 px-2 rounded-full">0</span>
+                                    <button id="followings-clear" class="bg-blue-500 text-white rounded-full py-1 px-2 ml-2">
+                                        Clear
+                                    </button>
                                 </span>
                                 <textarea id="followings-textbox" rows="10" placeholder="Paste your JSON or HTML code here" class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md text-sm font-mono"></textarea>
                             </div>
                         </div>
                         <div class="mt-8 flex flex-col items-center justify-center gap-4">
                             <div class="p-1 rounded-[calc(var(--btn-border-radius)+4px)] bg-gray-950/5 border dark:border-white/10 dark:bg-white/5">
-                                <a
-                                    href="/docs/installation"
+                                <button
+                                    id="submit"
                                     class="*:select-none dark:shadow-primary-500/10 *:disabled:opacity-20 disabled:*:text-gray-300 disabled:dark:*:text-gray-700 dark:*:disabled:!text-white group relative z-[1] flex h-11 items-center justify-center gap-1.5 rounded-[--btn-border-radius] border border-primary-600 bg-primary-500 px-4 text-base text-white shadow-md shadow-primary-200 before:absolute before:inset-0 before:rounded-[calc(var(--btn-border-radius)-1px)] before:border before:border-primary-500 before:bg-gradient-to-b before:from-primary-600 hover:bg-primary-600 active:bg-primary-700 disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-950/40 disabled:before:border-transparent disabled:before:bg-gray-100 disabled:before:from-transparent dark:border-0 dark:bg-primary-600 dark:before:border-0 dark:before:border-t dark:before:border-primary-400 dark:before:shadow-inner dark:before:shadow-white/10 dark:hover:bg-primary-700 dark:active:bg-primary-800 dark:active:before:from-primary-700 dark:disabled:border dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:disabled:before:bg-gray-900 dark:disabled:before:from-gray-900 dark:disabled:before:shadow-none [&>*:not(.sr-only)]:relative"
                                 >
                                     <svg class="size-5 relative" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,7 +84,7 @@
                                             fill="currentColor"
                                         ></path>
                                     </svg>
-                                    <span class="text-nowrap">Generate</span></a
+                                    <span class="text-nowrap">Generate List</span></button
                                 >
                             </div>
                             <button class="hidden *:select-none *:disabled:opacity-20 dark:*:disabled:!text-white dark:hover:bg-gray-500/15 group h-9 items-center justify-center gap-1.5 rounded-[--btn-border-radius] bg-gray-100 px-3 text-base text-gray-800 hover:bg-gray-200/75 active:bg-gray-100 disabled:border disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-950 dark:bg-gray-500/10 dark:text-gray-300 dark:active:bg-gray-500/10 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 [&>*:not(.sr-only)]:relative">
@@ -96,6 +102,15 @@
             </div>
         </section>
         <section>
+            <div class="mx-auto px-6 max-w-2xl">
+                <h3 id="accountsThatDontFollowBack" class="text-slate-100 font-semibold mb-3 text-sm hidden">Accounts that don't follow you back</h3>
+                <div class="text-white text-sm overflow-hidden">
+                    <ul id="not-following-back-list" class="flex flex-col gap-3">
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="help">
             <div class="py-36">
                 <div class="mx-auto px-6 max-w-6xl text-gray-500">
                     <div class="grid gap-12 md:gap-0 md:grid-cols-2 lg:grid-cols-5 items-center lg:gap-24">
@@ -152,15 +167,6 @@
                                     <svg class="size-7" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                                         <path fill="currentColor" d="M10.99 1.974c2.92-1.86 6.957-.992 9.001 1.934a6.268 6.268 0 0 1 1.072 4.74a5.9 5.9 0 0 1-.88 2.198c.64 1.221.855 2.62.61 3.977a5.882 5.882 0 0 1-2.657 3.94l-5.127 3.268c-2.92 1.86-6.957.993-9.002-1.933a6.269 6.269 0 0 1-1.07-4.741a5.9 5.9 0 0 1 .88-2.198a6.195 6.195 0 0 1-.611-3.977a5.881 5.881 0 0 1 2.658-3.94zM8.049 20.25c.782.29 1.633.332 2.44.123c.369-.099.72-.253 1.042-.458l5.128-3.267a3.538 3.538 0 0 0 1.598-2.37a3.769 3.769 0 0 0-.645-2.85a4.072 4.072 0 0 0-4.37-1.62c-.369.099-.72.253-1.042.458l-1.957 1.246a1.131 1.131 0 0 1-.314.138a1.227 1.227 0 0 1-1.5-.899a1.138 1.138 0 0 1-.01-.45a1.066 1.066 0 0 1 .48-.713l5.129-3.268a1.13 1.13 0 0 1 .314-.138a1.227 1.227 0 0 1 1.317.489c.157.222.23.492.207.762l-.018.19l.191.058a6.62 6.62 0 0 1 2.005 1.003l.263.192l.096-.295c.052-.156.093-.316.123-.478a3.769 3.769 0 0 0-.644-2.85a4.073 4.073 0 0 0-4.371-1.621a3.74 3.74 0 0 0-1.042.458L7.34 7.357a3.537 3.537 0 0 0-1.6 2.37a3.768 3.768 0 0 0 .645 2.85a4.073 4.073 0 0 0 4.371 1.62c.369-.099.72-.253 1.042-.457l1.956-1.248c.098-.061.204-.108.315-.137a1.228 1.228 0 0 1 1.5.899c.034.147.037.3.011.449a1.067 1.067 0 0 1-.482.713l-5.127 3.269a1.125 1.125 0 0 1-.314.137a1.226 1.226 0 0 1-1.317-.488a1.149 1.149 0 0 1-.207-.762l.017-.19l-.19-.058a6.613 6.613 0 0 1-2.005-1.003l-.263-.192l-.096.295a3.568 3.568 0 0 0-.123.478a3.77 3.77 0 0 0 .644 2.85a4.073 4.073 0 0 0 1.93 1.498"/>
                                     </svg>
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    <div class="px-[--card-padding]">
-                                        <div class="text-sm font-mono pt-4">
-                                            Test
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
