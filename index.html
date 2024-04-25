@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>InstaListDiff - Find who unfollowed you without using 3rd party apps</title>
+        <title>InstaListDiff - Find who unfollowed you without using third-party apps</title>
         <meta name="description" content="Modern landing page built with tailus themer" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" media="(prefers-color-scheme: light)" />
         <link rel="icon" type="image/svg+xml" href="/darkfavicon.svg" media="(prefers-color-scheme: dark)" />
@@ -29,10 +29,10 @@
         <nav class="fixed overflow-hidden z-20 w-full bg-white/80 dark:bg-gray-950/0 dark:shadow-md rounded-b-lg dark:shadow-gray-950/10 border-b border-[--ui-light-border-color] border-x dark:border-[--ui-dark-border-color] backdrop-blur-2xl">
             <div class="px-6 m-auto max-w-6xl 2xl:px-0">
                 <div class="flex flex-wrap items-center justify-between py-2 sm:py-4">
-                    <div class="w-full lg:w-auto text-white text-xl font-bold">
+                    <div class="w-full lg:w-auto text-slate-100 text-xl font-bold">
                         <a href="/" aria-label="instagram-list-diff" class="flex flex-col">
                             <span class="block">InstaListDiff</span>
-                            <span class="text-[10px] leading-[12px] font-thin">Find who unfollowed you without using a 3rd party app</span>
+                            <span class="text-[10px] leading-[12px] font-thin">Find who unfollowed you without using a third-party app</span>
                         </a>
                     </div>
                 </div>
@@ -44,38 +44,43 @@
             <div class="relative pt-24 lg:pt-28">
                 <div class="mx-auto px-6 max-w-7xl md:px-12">
                     <div class="text-center sm:mx-auto sm:w-10/12 lg:mr-auto lg:mt-0 lg:w-4/5">
-                        <!-- <span class="bg-info-600 py-2 px-3 text-xs rounded-full text-white">100% Free and Risk Free</span> -->
-                        <h1 class="mt-8 text-wrap text-4xl md:text-3xl font-semibold text-gray-950 dark:text-white xl:text-5xl xl:[line-height:1.125]">Find unfollowers without using a 3rd party app</h1>
-                        <a href="#help" class="text-white text-xs font-semibold underline">How to use?</a>
+                        <h1 class="mt-8 text-wrap text-4xl font-semibold text-slate-100 max-w-[500px] text-center mx-auto mb-4">Find unfollowers without using third-party apps</h1>
+                        <p class="text-slate-100 text-xs font-semibold block mt-4">Frequent questions asked:</p>
+                        <a href="#help" class="text-slate-100 text-xs font-semibold underline mt-4 inline">How to use?</a>
+                        <a href="#faq-1" class="text-slate-100 text-xs font-semibold underline mt-4 inline ml-2">Why is it safe?</a>
+                        <a href="#faq-2" class="text-slate-100 text-xs font-semibold underline mt-4 inline ml-2">Do I need to pay?</a>
+                        <a href="#faq" class="text-slate-100 text-xs font-semibold underline mt-4 inline ml-2">FAQ</a>
+                        <a href="#contact" class="text-slate-100 text-xs font-semibold underline mt-4 inline ml-2">Help</a>
+
                         <div class="mt-8 flex flex-col md:flex-row md:flex gap-[24px]">
                             <div class="flex flex-col h-full w-full">
-                                <span id="followers" class="text-white flex items-center text-sm bg-primary-600 shadow-inner shadow-white/10 rounded-t-md p-3">
+                                <span id="followers" class="text-slate-100 flex items-center text-sm bg-primary-600 shadow-inner shadow-white/10 rounded-t-md p-3">
                                     Followers
                                     <span class="bg-green-700 px-2 py-1 rounded-full text-xs ml-2">json, html</span>
                                     <span id="followers-count" class="ml-auto bg-green-500 py-1 px-2 rounded-full">0</span>
-                                    <button id="followers-clear" class="bg-primary-500 text-white rounded-full py-1 px-2 ml-2">
+                                    <button id="followers-clear" class="bg-primary-500 text-slate-100 rounded-full py-1 px-2 ml-2">
                                         Clear
                                     </button>
                                 </span>
-                                <textarea id="followers-textbox" rows="10" placeholder="Paste your JSON or HTML code here" class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md text-sm font-mono"></textarea>
+                                <textarea id="followers-textbox" rows="12" placeholder="Paste your JSON or HTML code here" class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md text-sm font-mono"></textarea>
                             </div>
                             <div class="flex flex-col h-full w-full">
-                                <span id="followings" class="text-white flex items-center text-sm bg-blue-600 shadow-inner shadow-white/10 rounded-t-md p-3">
+                                <span id="followings" class="text-slate-100 flex items-center text-sm bg-blue-600 shadow-inner shadow-white/10 rounded-t-md p-3">
                                     Followings
                                     <span class="bg-blue-700 px-2 py-1 rounded-full text-xs ml-2">json, html</span>
                                     <span id="followings-count" class="ml-auto bg-blue-500 py-1 px-2 rounded-full">0</span>
-                                    <button id="followings-clear" class="bg-blue-500 text-white rounded-full py-1 px-2 ml-2">
+                                    <button id="followings-clear" class="bg-blue-500 text-slate-100 rounded-full py-1 px-2 ml-2">
                                         Clear
                                     </button>
                                 </span>
-                                <textarea id="followings-textbox" rows="10" placeholder="Paste your JSON or HTML code here" class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md text-sm font-mono"></textarea>
+                                <textarea id="followings-textbox" rows="12" placeholder="Paste your JSON or HTML code here" class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md text-sm font-mono"></textarea>
                             </div>
                         </div>
                         <div class="mt-8 flex flex-col items-center justify-center gap-4">
                             <div class="p-1 rounded-[calc(var(--btn-border-radius)+4px)] bg-gray-950/5 border dark:border-white/10 dark:bg-white/5">
                                 <button
                                     id="submit"
-                                    class="*:select-none dark:shadow-primary-500/10 *:disabled:opacity-20 disabled:*:text-gray-300 disabled:dark:*:text-gray-700 dark:*:disabled:!text-white group relative z-[1] flex h-11 items-center justify-center gap-1.5 rounded-[--btn-border-radius] border border-primary-600 bg-primary-500 px-4 text-base text-white shadow-md shadow-primary-200 before:absolute before:inset-0 before:rounded-[calc(var(--btn-border-radius)-1px)] before:border before:border-primary-500 before:bg-gradient-to-b before:from-primary-600 hover:bg-primary-600 active:bg-primary-700 disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-950/40 disabled:before:border-transparent disabled:before:bg-gray-100 disabled:before:from-transparent dark:border-0 dark:bg-primary-600 dark:before:border-0 dark:before:border-t dark:before:border-primary-400 dark:before:shadow-inner dark:before:shadow-white/10 dark:hover:bg-primary-700 dark:active:bg-primary-800 dark:active:before:from-primary-700 dark:disabled:border dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:disabled:before:bg-gray-900 dark:disabled:before:from-gray-900 dark:disabled:before:shadow-none [&>*:not(.sr-only)]:relative"
+                                    class="*:select-none dark:shadow-primary-500/10 *:disabled:opacity-20 disabled:*:text-gray-300 disabled:dark:*:text-gray-700 dark:*:disabled:!text-slate-100 group relative z-[1] flex h-11 items-center justify-center gap-1.5 rounded-[--btn-border-radius] border border-primary-600 bg-primary-500 px-4 text-base text-slate-100 shadow-md shadow-primary-200 before:absolute before:inset-0 before:rounded-[calc(var(--btn-border-radius)-1px)] before:border before:border-primary-500 before:bg-gradient-to-b before:from-primary-600 hover:bg-primary-600 active:bg-primary-700 disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-950/40 disabled:before:border-transparent disabled:before:bg-gray-100 disabled:before:from-transparent dark:border-0 dark:bg-primary-600 dark:before:border-0 dark:before:border-t dark:before:border-primary-400 dark:before:shadow-inner dark:before:shadow-white/10 dark:hover:bg-primary-700 dark:active:bg-primary-800 dark:active:before:from-primary-700 dark:disabled:border dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:disabled:before:bg-gray-900 dark:disabled:before:from-gray-900 dark:disabled:before:shadow-none [&>*:not(.sr-only)]:relative"
                                 >
                                     <svg class="size-5 relative" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path class="opacity-20 dark:opacity-50" d="M7.40705 15L5.10627 16.7375C5.0234 16.8039 4.92499 16.848 4.82033 16.8658C4.71567 16.8836 4.6082 16.8744 4.50806 16.8392C4.40793 16.8039 4.31842 16.7437 4.24798 16.6643C4.17755 16.5849 4.12851 16.4888 4.10549 16.3852L3.13986 12.0391C3.11906 11.9458 3.11993 11.8489 3.14241 11.756C3.16489 11.6631 3.20839 11.5766 3.26955 11.5031L5.63752 8.66484C5.5469 10.4883 5.99221 12.6117 7.40705 15ZM16.7305 11.5031L14.3625 8.66484C14.4571 10.4883 14.0078 12.6117 12.593 15L14.8938 16.7375C14.9766 16.8039 15.075 16.848 15.1797 16.8658C15.2844 16.8836 15.3918 16.8744 15.492 16.8392C15.5921 16.8039 15.6816 16.7437 15.7521 16.6643C15.8225 16.5849 15.8715 16.4888 15.8946 16.3852L16.8602 12.0391C16.881 11.9458 16.8801 11.8489 16.8576 11.756C16.8351 11.6631 16.7917 11.5766 16.7305 11.5031Z" fill="currentColor"></path>
@@ -87,7 +92,7 @@
                                     <span class="text-nowrap">Generate List</span></button
                                 >
                             </div>
-                            <button class="hidden *:select-none *:disabled:opacity-20 dark:*:disabled:!text-white dark:hover:bg-gray-500/15 group h-9 items-center justify-center gap-1.5 rounded-[--btn-border-radius] bg-gray-100 px-3 text-base text-gray-800 hover:bg-gray-200/75 active:bg-gray-100 disabled:border disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-950 dark:bg-gray-500/10 dark:text-gray-300 dark:active:bg-gray-500/10 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 [&>*:not(.sr-only)]:relative">
+                            <button class="hidden *:select-none *:disabled:opacity-20 dark:*:disabled:!text-slate-100 dark:hover:bg-gray-500/15 group h-9 items-center justify-center gap-1.5 rounded-[--btn-border-radius] bg-gray-100 px-3 text-base text-gray-800 hover:bg-gray-200/75 active:bg-gray-100 disabled:border disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-950 dark:bg-gray-500/10 dark:text-gray-300 dark:active:bg-gray-500/10 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 [&>*:not(.sr-only)]:relative">
                                 <span class="text-sm">Learn more</span>
                                 <svg class="-mr-1" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48">
                                     <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="m19 12l12 12l-12 12"/></svg>
@@ -104,7 +109,7 @@
         <section>
             <div class="mx-auto px-6 max-w-2xl">
                 <h3 id="accountsThatDontFollowBack" class="text-slate-100 font-semibold mb-3 text-sm hidden">Accounts that don't follow you back</h3>
-                <div class="text-white text-sm overflow-hidden">
+                <div class="text-slate-100 text-sm overflow-hidden">
                     <ul id="not-following-back-list" class="flex flex-col gap-3">
                     </ul>
                 </div>
@@ -116,11 +121,11 @@
                     <div class="grid gap-12 md:gap-0 md:grid-cols-2 lg:grid-cols-5 items-center lg:gap-24">
                         <div class="lg:col-span-2">
                             <div class="md:pr-6 lg:pr-0">
-                                <h2 class="text-2xl text-gray-950 dark:text-white font-semibold">How to download my following and followers data?</h2>
+                                <h2 class="text-2xl text-gray-950 dark:text-slate-100 font-semibold">How to download my following and followers data?</h2>
                             </div>
                             <span class="mt-2 mb-0 flex items-center gap-[6px]">
                                 <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
-                                <span class="text-white text-xs"><a class="text-white underline" href="#">You can also view the steps from Instagram's website.</a></span>
+                                <span class="text-slate-100 text-xs"><a class="text-slate-100 underline" href="#">You can also view the steps from Instagram's website.</a></span>
                             </span>
                             <ul class="mt-3 divide-y border-y border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] divide-[--ui-light-border-color] dark:divide-[--ui-dark-border-color] *:py-3 *:flex *:items-center *:gap-3 text-gray-700 dark:text-gray-300">
                                 <li>
@@ -153,7 +158,7 @@
                                         <path fill="currentColor" d="M8.358 20.162c-1.186-1.07-1.532-3.316-1.038-4.944c.856 1.026 2.043 1.352 3.272 1.535c1.897.283 3.76.177 5.522-.678c.202-.098.388-.229.608-.36c.166.473.209.95.151 1.437c-.14 1.185-.738 2.1-1.688 2.794c-.38.277-.782.525-1.175.787c-1.205.804-1.531 1.747-1.078 3.119l.044.148a3.158 3.158 0 0 1-1.407-1.188a3.31 3.31 0 0 1-.544-1.815c-.004-.32-.004-.642-.048-.958c-.106-.769-.472-1.113-1.161-1.133c-.707-.02-1.267.411-1.415 1.09c-.012.053-.028.104-.045.165zm-5.961-4.445s3.24-1.575 6.49-1.575l2.451-7.565c.092-.366.36-.614.662-.614c.302 0 .57.248.662.614l2.45 7.565c3.85 0 6.491 1.575 6.491 1.575L16.088.727C15.93.285 15.663 0 15.303 0H8.697c-.36 0-.615.285-.784.727z"/>
                                     </svg>
                                 </div>
-                                <div class="bg-gray-950 text-white dark:bg-white dark:text-gray-950">
+                                <div class="bg-gray-950 text-slate-100 dark:bg-white dark:text-gray-950">
                                     <svg class="size-7" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 15 15">
                                         <path fill="currentColor" d="m4.5 4.5l.405-.293A.5.5 0 0 0 4 4.5zm3 9.5A6.5 6.5 0 0 1 1 7.5H0A7.5 7.5 0 0 0 7.5 15zM14 7.5A6.5 6.5 0 0 1 7.5 14v1A7.5 7.5 0 0 0 15 7.5zM7.5 1A6.5 6.5 0 0 1 14 7.5h1A7.5 7.5 0 0 0 7.5 0zm0-1A7.5 7.5 0 0 0 0 7.5h1A6.5 6.5 0 0 1 7.5 1zM5 12V4.5H4V12zm-.905-7.207l6.5 9l.81-.586l-6.5-9zM10 4v6h1V4z"/>
                                     </svg>
