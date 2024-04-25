@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
+        <link rel="stylesheet" href="./assets/css/tailwind.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>InstaListDiff - Find who unfollowed you without using third-party apps</title>
         <meta name="description" content="Modern landing page built with tailus themer" />
@@ -32,7 +33,7 @@
                     <div class="w-full lg:w-auto text-slate-100 text-xl font-bold">
                         <a href="/" aria-label="instagram-list-diff" class="flex flex-col">
                             <span class="block">InstaListDiff</span>
-                            <span class="text-[10px] leading-[12px] font-thin">Find who unfollowed you without using a third-party app</span>
+                            <span class="text-[10px] leading-[12px] font-thin">Find who unfollowed you without using third-party apps</span>
                         </a>
                     </div>
                 </div>
@@ -48,32 +49,32 @@
                         <p class="text-slate-100 text-xs font-semibold block mt-4">Frequent questions asked:</p>
                         <a href="#help" class="text-slate-100 text-xs font-semibold underline mt-4 inline">How to use?</a>
                         <a href="#faq-1" class="text-slate-100 text-xs font-semibold underline mt-4 inline ml-2">Why is it safe?</a>
-                        <a href="#faq-2" class="text-slate-100 text-xs font-semibold underline mt-4 inline ml-2">Do I need to pay?</a>
-                        <a href="#faq" class="text-slate-100 text-xs font-semibold underline mt-4 inline ml-2">FAQ</a>
+                        <a href="#faq-1" class="text-slate-100 text-xs font-semibold underline mt-4 inline ml-2">Do I need to pay?</a>
+                        <a href="#faq-1" class="text-slate-100 text-xs font-semibold underline mt-4 inline ml-2">FAQ</a>
                         <a href="#contact" class="text-slate-100 text-xs font-semibold underline mt-4 inline ml-2">Help</a>
 
                         <div class="mt-8 flex flex-col md:flex-row md:flex gap-[24px]">
                             <div class="flex flex-col h-full w-full">
                                 <span id="followers" class="text-slate-100 flex items-center text-sm bg-primary-600 shadow-inner shadow-white/10 rounded-t-md p-3">
                                     Followers
-                                    <span class="bg-green-700 px-2 py-1 rounded-full text-xs ml-2">json, html</span>
+                                    <span class="bg-green-700 px-2 py-1 rounded-full text-xs ml-2">json</span>
                                     <span id="followers-count" class="ml-auto bg-green-500 py-1 px-2 rounded-full">0</span>
                                     <button id="followers-clear" class="bg-primary-500 text-slate-100 rounded-full py-1 px-2 ml-2">
                                         Clear
                                     </button>
                                 </span>
-                                <textarea id="followers-textbox" rows="12" placeholder="Paste your JSON or HTML code here" class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md text-sm font-mono"></textarea>
+                                <textarea id="followers-textbox" rows="12" placeholder="Paste your JSON code here" class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md text-sm font-mono"></textarea>
                             </div>
                             <div class="flex flex-col h-full w-full">
                                 <span id="followings" class="text-slate-100 flex items-center text-sm bg-blue-600 shadow-inner shadow-white/10 rounded-t-md p-3">
                                     Followings
-                                    <span class="bg-blue-700 px-2 py-1 rounded-full text-xs ml-2">json, html</span>
+                                    <span class="bg-blue-700 px-2 py-1 rounded-full text-xs ml-2">json</span>
                                     <span id="followings-count" class="ml-auto bg-blue-500 py-1 px-2 rounded-full">0</span>
                                     <button id="followings-clear" class="bg-blue-500 text-slate-100 rounded-full py-1 px-2 ml-2">
                                         Clear
                                     </button>
                                 </span>
-                                <textarea id="followings-textbox" rows="12" placeholder="Paste your JSON or HTML code here" class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md text-sm font-mono"></textarea>
+                                <textarea id="followings-textbox" rows="12" placeholder="Paste your JSON code here" class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md text-sm font-mono"></textarea>
                             </div>
                         </div>
                         <div class="mt-8 flex flex-col items-center justify-center gap-4">
@@ -118,67 +119,173 @@
         <section id="help">
             <div class="py-36">
                 <div class="mx-auto px-6 max-w-6xl text-gray-500">
-                    <div class="grid gap-12 md:gap-0 md:grid-cols-2 lg:grid-cols-5 items-center lg:gap-24">
+                    <div class="grid gap-12 md:gap-0 md:grid-cols-2 lg:grid-cols-5 lg:gap-24">
                         <div class="lg:col-span-2">
                             <div class="md:pr-6 lg:pr-0">
-                                <h2 class="text-2xl text-gray-950 dark:text-slate-100 font-semibold">How to download my following and followers data?</h2>
+                                <h2 class="text-2xl text-gray-950 dark:text-slate-100 font-semibold">How use InstaListDiff?</h2>
                             </div>
-                            <span class="mt-2 mb-0 flex items-center gap-[6px]">
-                                <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
-                                <span class="text-slate-100 text-xs"><a class="text-slate-100 underline" href="#">You can also view the steps from Instagram's website.</a></span>
-                            </span>
-                            <ul class="mt-3 divide-y border-y border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] divide-[--ui-light-border-color] dark:divide-[--ui-dark-border-color] *:py-3 *:flex *:items-center *:gap-3 text-gray-700 dark:text-gray-300">
-                                <li>
+
+                            <ul class="mt-3 divide-y border-y border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] divide-[--ui-light-border-color] dark:divide-[--ui-dark-border-color] *:py-3 *:gap-3 text-gray-700 dark:text-gray-300">
+                                <li class="font-semibold">
                                     Step 1. 
-                                    Open Instagram on your computer (it has to be a computer) and go to your profile.
+                                    Download Your Data from Instagram:
+                                    <span class="block mt-3 font-thin">
+                                        First, you'll need to download your data from Instagram. Instagram provides an option to download certain information about your account, including your list of followers and followings, in a JSON format. This can be done through your Instagram settings.
+                                    </span>
+                                    <span class="mt-2 mb-0 flex items-center gap-[6px]">
+                                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
+                                        <span class="block"><a class="text-slate-100 mt-2 text-sm underline" target="_blank" rel="noreferrer" href="https://help.instagram.com/181231772500920">You can view the steps from Instagram's website.</a></span>
+                                    </span>
+                                    <span class="text-sm mt-3 flex items-center">To see all results, in Date range choose "All time".</span>
                                 </li>
-                                <li>
+                                <li class="font-semibold">
                                     Step 2. 
-                                    Fast response time
+                                    Paste JSON Code:
+                                    <span class="block mt-3 font-thin">
+                                        You'll see two textboxes labeled "Followers" and "Followings." Simply paste the JSON code containing your list of followers into the "Followers" box, and paste the JSON code containing your list of followings into the "Followings" box.
+                                    </span>
                                 </li>
-                                <li>
+                                <li class="font-semibold">
                                     Step 3. 
-                                    Open Settings > My data > Personal > Download > Request download
+                                    Analyze the Results:
+                                    <span class="block mt-3 font-thin">
+                                        After pasting the JSON code, click on the "Compare" or "Find Difference" button to analyze the data. InstaListDiff will then process the information and provide you with the differences between your followers and followings.
+                                    </span>
                                 </li>
-                                <li >
+                                <li class="font-semibold">
                                     Step 4. 
-                                    Wait for the email from Instagram with the download link
+                                    Review the Results:
+                                    <span class="block mt-3 font-thin">
+                                        You'll receive a clear breakdown of who follows you but you don't follow back, and vice versa. This can be helpful for managing your Instagram connections and understanding your network better.
+                                    </span>
                                 </li>
                             </ul>
                         </div>
-                        <div class="overflow-hidden lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[--card-border-radius] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color]">
-                            <div class="flex gap-2 py-6 *:size-2.5 *:rounded-full px-[--card-padding]">
-                                <div class="bg-[#f87171]"></div>
-                                <div class="bg-[#fbbf24]"></div>
-                                <div class="bg-[#a3e635]"></div>
-                            </div>
-                            <div class="flex gap-3 px-[--card-padding] text-gray-600 dark:text-gray-400 *:aspect-square *:border *:p-4 *:rounded-[calc(var(--card-border-radius)/2)] *:border-[--ui-light-border-color] dark:*:border-[--ui-dark-border-color]">
-                                <div>
-                                    <svg class="size-7" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M8.358 20.162c-1.186-1.07-1.532-3.316-1.038-4.944c.856 1.026 2.043 1.352 3.272 1.535c1.897.283 3.76.177 5.522-.678c.202-.098.388-.229.608-.36c.166.473.209.95.151 1.437c-.14 1.185-.738 2.1-1.688 2.794c-.38.277-.782.525-1.175.787c-1.205.804-1.531 1.747-1.078 3.119l.044.148a3.158 3.158 0 0 1-1.407-1.188a3.31 3.31 0 0 1-.544-1.815c-.004-.32-.004-.642-.048-.958c-.106-.769-.472-1.113-1.161-1.133c-.707-.02-1.267.411-1.415 1.09c-.012.053-.028.104-.045.165zm-5.961-4.445s3.24-1.575 6.49-1.575l2.451-7.565c.092-.366.36-.614.662-.614c.302 0 .57.248.662.614l2.45 7.565c3.85 0 6.491 1.575 6.491 1.575L16.088.727C15.93.285 15.663 0 15.303 0H8.697c-.36 0-.615.285-.784.727z"/>
-                                    </svg>
-                                </div>
-                                <div class="bg-gray-950 text-slate-100 dark:bg-white dark:text-gray-950">
-                                    <svg class="size-7" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 15 15">
-                                        <path fill="currentColor" d="m4.5 4.5l.405-.293A.5.5 0 0 0 4 4.5zm3 9.5A6.5 6.5 0 0 1 1 7.5H0A7.5 7.5 0 0 0 7.5 15zM14 7.5A6.5 6.5 0 0 1 7.5 14v1A7.5 7.5 0 0 0 15 7.5zM7.5 1A6.5 6.5 0 0 1 14 7.5h1A7.5 7.5 0 0 0 7.5 0zm0-1A7.5 7.5 0 0 0 0 7.5h1A6.5 6.5 0 0 1 7.5 1zM5 12V4.5H4V12zm-.905-7.207l6.5 9l.81-.586l-6.5-9zM10 4v6h1V4z"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <svg class="size-7" xmlns="http://www.w3.org/2000/svg" width="1.53em" height="1em" viewBox="0 0 256 168">
-                                        <path fill="currentColor" d="M143.618 167.029h95.166c3.023 0 5.992-.771 8.61-2.237a16.963 16.963 0 0 0 6.302-6.115a16.324 16.324 0 0 0 2.304-8.352c0-2.932-.799-5.811-2.312-8.35L189.778 34.6a16.966 16.966 0 0 0-6.301-6.113a17.626 17.626 0 0 0-8.608-2.238c-3.023 0-5.991.772-8.609 2.238a16.964 16.964 0 0 0-6.3 6.113l-16.342 27.473l-31.95-53.724a16.973 16.973 0 0 0-6.304-6.112A17.638 17.638 0 0 0 96.754 0c-3.022 0-5.992.772-8.61 2.237a16.973 16.973 0 0 0-6.303 6.112L2.31 141.975a16.302 16.302 0 0 0-2.31 8.35c0 2.932.793 5.813 2.304 8.352a16.964 16.964 0 0 0 6.302 6.115a17.628 17.628 0 0 0 8.61 2.237h59.737c23.669 0 41.123-10.084 53.134-29.758l29.159-48.983l15.618-26.215l46.874 78.742h-62.492zm-67.64-26.24l-41.688-.01L96.782 35.796l31.181 52.492l-20.877 35.084c-7.976 12.765-17.037 17.416-31.107 17.416"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <svg class="size-7" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M10.99 1.974c2.92-1.86 6.957-.992 9.001 1.934a6.268 6.268 0 0 1 1.072 4.74a5.9 5.9 0 0 1-.88 2.198c.64 1.221.855 2.62.61 3.977a5.882 5.882 0 0 1-2.657 3.94l-5.127 3.268c-2.92 1.86-6.957.993-9.002-1.933a6.269 6.269 0 0 1-1.07-4.741a5.9 5.9 0 0 1 .88-2.198a6.195 6.195 0 0 1-.611-3.977a5.881 5.881 0 0 1 2.658-3.94zM8.049 20.25c.782.29 1.633.332 2.44.123c.369-.099.72-.253 1.042-.458l5.128-3.267a3.538 3.538 0 0 0 1.598-2.37a3.769 3.769 0 0 0-.645-2.85a4.072 4.072 0 0 0-4.37-1.62c-.369.099-.72.253-1.042.458l-1.957 1.246a1.131 1.131 0 0 1-.314.138a1.227 1.227 0 0 1-1.5-.899a1.138 1.138 0 0 1-.01-.45a1.066 1.066 0 0 1 .48-.713l5.129-3.268a1.13 1.13 0 0 1 .314-.138a1.227 1.227 0 0 1 1.317.489c.157.222.23.492.207.762l-.018.19l.191.058a6.62 6.62 0 0 1 2.005 1.003l.263.192l.096-.295c.052-.156.093-.316.123-.478a3.769 3.769 0 0 0-.644-2.85a4.073 4.073 0 0 0-4.371-1.621a3.74 3.74 0 0 0-1.042.458L7.34 7.357a3.537 3.537 0 0 0-1.6 2.37a3.768 3.768 0 0 0 .645 2.85a4.073 4.073 0 0 0 4.371 1.62c.369-.099.72-.253 1.042-.457l1.956-1.248c.098-.061.204-.108.315-.137a1.228 1.228 0 0 1 1.5.899c.034.147.037.3.011.449a1.067 1.067 0 0 1-.482.713l-5.127 3.269a1.125 1.125 0 0 1-.314.137a1.226 1.226 0 0 1-1.317-.488a1.149 1.149 0 0 1-.207-.762l.017-.19l-.19-.058a6.613 6.613 0 0 1-2.005-1.003l-.263-.192l-.096.295a3.568 3.568 0 0 0-.123.478a3.77 3.77 0 0 0 .644 2.85a4.073 4.073 0 0 0 1.93 1.498"/>
-                                    </svg>
-                                </div>
+                        <div class="inline-flex items-center h-max lg:col-span-3 border rounded-[--card-border-radius] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color]">
+                            <div class="inline-flex flex-col w-full gap-3 p-6 text-gray-600 dark:text-gray-400 *:rounded-[calc(var(--card-border-radius)/2)]">
+                                    <p class="text-slate-500 font-thin mb-1 text-xs">Example:</p>
+                                    <h3 class="text-slate-100 font-semibold mb-3 text-sm">Accounts that don't follow you back</h3>
+                                    <div class="text-slate-100 text-sm w-full">
+                                        <ul id="not-following-back-list" class="flex flex-col gap-3">
+                                            <li class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
+                                                <span>
+                                                    @username
+                                                  </span>
+                                                  <a class="text-xs flex items-center gap-2" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
+                                                    View instagram
+                                                  </a>
+                                            </li>
+                                            <li class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
+                                                <span>
+                                                    @username
+                                                  </span>
+                                                  <a class="text-xs flex items-center gap-2" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
+                                                    View instagram
+                                                  </a>
+                                            </li>
+                                            <li class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
+                                                <span>
+                                                    @username
+                                                  </span>
+                                                  <a class="text-xs flex items-center gap-2" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
+                                                    View instagram
+                                                  </a>
+                                            </li>
+                                            <li class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
+                                                <span>
+                                                    @username
+                                                  </span>
+                                                  <a class="text-xs flex items-center gap-2" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
+                                                    View instagram
+                                                  </a>
+                                            </li>
+                                            <li class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
+                                                <span>
+                                                     @username
+                                                  </span>
+                                                  <a class="text-xs flex items-center gap-2" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
+                                                    View instagram
+                                                  </a>
+                                            </li>
+                                            <li class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
+                                                <span>
+                                                     @username
+                                                  </span>
+                                                  <a class="text-xs flex items-center gap-2" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
+                                                    View instagram
+                                                  </a>
+                                            </li>
+                                            <li class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
+                                                <span>
+                                                     @username
+                                                  </span>
+                                                  <a class="text-xs flex items-center gap-2" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
+                                                    View instagram
+                                                  </a>
+                                            </li>
+                                            <li class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
+                                                <span>
+                                                     @username
+                                                  </span>
+                                                  <a class="text-xs flex items-center gap-2" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
+                                                    View instagram
+                                                  </a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <section class="py-12" id="faq-1">
+            <div class="mx-auto px-6 max-w-6xl text-gray-500">
+                <div class="grid gap-12 md:gap-0 md:grid-cols-2 lg:grid-cols-5 lg:gap-24">
+            <div class="lg:col-span-12">
+                <div class="md:pr-6 lg:pr-0">
+                    <h2 class="text-2xl text-gray-950 dark:text-slate-100 font-semibold">Frequently asked questions</h2>
+                </div>
+                <ul class="mt-3 divide-y border-y border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] divide-[--ui-light-border-color] dark:divide-[--ui-dark-border-color] *:py-3 *:gap-3 text-gray-700 dark:text-gray-300">
+                    <li class="font-semibold">
+                        Why is it safe?
+                        <span class="block mt-3 font-thin">Client-side Processing: Our app operates entirely on the client side, meaning your data never leaves your device. 
+                            <br />When you paste your JSON code into our website, all processing happens locally in your browser. 
+                            This ensures that your sensitive information remains under your control at all times.<br /><br />
+                            No Database Storage: We don't store any of your data in a database. Once you close the app or refresh the page, your JSON code is gone. This eliminates any risk of data exposure or unauthorized access to your information.<br /><br />
+                            Transparent Operations: We believe in transparency. Our app doesn't perform any hidden operations or transmit your data to external servers. You can trust that what you input into our app stays within your browser and doesn't go anywhere else.
+Your security is our top priority. If you have any further questions or concerns about the safety of our app, please don't hesitate to reach out to us.</span>
+                    </li>
+                    <li class="font-semibold">
+                        Do I need to pay?
+                        <span class="block mt-3 font-thin">Absolutely not! Our app is completely free to use. We believe in providing accessible tools for everyone without any cost barriers. So feel free to use our app as much as you need without worrying about any charges.</span>
+                    </li>
+                    <li class="font-semibold">
+                        Why shouldn't I use third-party apps to find unfollowers on Instagram?
+                        <span class="block mt-3 font-thin">
+                            Using third-party apps for this purpose can pose risks:<br /><br />
+
+Security: They may require your login credentials, risking account security. <br />
+Terms of Service: It might violate Instagram's terms, leading to account suspension.<br />
+Accuracy: Results may be unreliable due to API limitations.<br />
+Privacy: Some apps collect and share personal data, compromising privacy.<br />
+For safety, it's best to use Instagram's built-in features or trusted tools that prioritize security and privacy.<br />
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </section>
     </main>
 
     <footer class="rounded-xl border border-[--ui-light-border-color] dark:border-[--ui-dark-border-color]">

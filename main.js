@@ -1,4 +1,3 @@
-import "./assets/css/tailwind.css";
 
 document.getElementById("submit").addEventListener("click", function() {
    // Get the textarea elements
