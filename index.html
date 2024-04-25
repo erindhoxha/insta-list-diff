@@ -43,23 +43,26 @@
         <section class="relative">
             <div class="relative pt-24 lg:pt-28">
                 <div class="mx-auto px-6 max-w-7xl md:px-12">
-                    
                     <div class="text-center sm:mx-auto sm:w-10/12 lg:mr-auto lg:mt-0 lg:w-4/5">
                         <!-- <span class="bg-info-600 py-2 px-3 text-xs rounded-full text-white">100% Free and Risk Free</span> -->
                         <h1 class="mt-8 text-wrap text-4xl md:text-3xl font-semibold text-gray-950 dark:text-white xl:text-5xl xl:[line-height:1.125]">Find unfollowers without using a 3rd party app</h1>
                         <a href="#help" class="text-white text-xs font-semibold underline">How to use?</a>
                         <div class="mt-8 flex gap-[24px]">
                             <div class="flex flex-col h-full w-full">
-                                <span class="text-white text-sm bg-primary-600 shadow-inner shadow-white/10 rounded-t-md p-3">
+                                <span id="followers" class="text-white flex items-center text-sm bg-primary-600 shadow-inner shadow-white/10 rounded-t-md p-3">
                                     Followers
+                                    <span class="bg-green-700 px-2 py-1 rounded-full text-xs ml-2">json, html</span>
+                                    <span id="followers-count" class="ml-auto bg-green-500 py-1 px-2 rounded-full">0</span>
                                 </span>
-                                <textarea rows="10" placeholder="Paste your JSON or HTML code here" class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md text-sm font-mono"></textarea>
+                                <textarea id="followers-textbox" rows="10" placeholder="Paste your JSON or HTML code here" class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md text-sm font-mono"></textarea>
                             </div>
                             <div class="flex flex-col h-full w-full">
-                                <span class="text-white text-sm bg-blue-600 shadow-inner shadow-white/1 rounded-t-md p-3">
+                                <span id="followings" class="text-white flex items-center text-sm bg-blue-600 shadow-inner shadow-white/10 rounded-t-md p-3">
                                     Followings
+                                    <span class="bg-blue-700 px-2 py-1 rounded-full text-xs ml-2">json, html</span>
+                                    <span id="followings-count" class="ml-auto bg-blue-500 py-1 px-2 rounded-full">0</span>
                                 </span>
-                                <textarea rows="10" placeholder="Paste your JSON or HTML code here" class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md text-sm font-mono"></textarea>
+                                <textarea id="followings-textbox" rows="10" placeholder="Paste your JSON or HTML code here" class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md text-sm font-mono"></textarea>
                             </div>
                         </div>
                         <div class="mt-8 flex flex-col items-center justify-center gap-4">
