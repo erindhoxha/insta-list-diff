@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="./assets/css/tailwind.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>InstaListDiff - Find who unfollowed you without using third-party apps</title>
-        <meta name="description" content="Modern landing page built with tailus themer" />
+        <meta name="description" content="Find who unfollowed you without using third-party apps." />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" media="(prefers-color-scheme: light)" />
         <link rel="icon" type="image/svg+xml" href="/darkfavicon.svg" media="(prefers-color-scheme: dark)" />
 
@@ -13,7 +13,7 @@
         <meta property="og:url" content="https://instalistdiff.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="WebSharper" />
-        <meta property="og:description" content="Modern landing page built with tailus themer" />
+        <meta property="og:description" content="Find who unfollowed you without using third-party apps." />
         <meta property="og:image" content="/og-cover.png" />
 
         <!-- Twitter Meta Tags -->
@@ -21,7 +21,7 @@
         <meta property="twitter:domain" content="instalistdiff.com" />
         <meta property="twitter:url" content="https://instalistdiff.com" />
         <meta name="twitter:title" content="InstaListDiff" />
-        <meta name="twitter:description" content="Modern landing page built with tailus themer" />
+        <meta name="twitter:description" content="Find who unfollowed you without using third-party apps." />
         <meta name="twitter:image" content="/og-cover.png" />
     </head>
     
@@ -118,8 +118,8 @@
         </section>
         <section id="help">
             <div class="py-36">
-                <div class="mx-auto px-6 max-w-6xl text-gray-500">
-                    <div class="grid gap-12 md:gap-0 md:grid-cols-2 lg:grid-cols-5 lg:gap-24">
+                <div class="px-6 m-auto max-w-6xl 2xl:px-0 text-gray-500">
+                    <div class="grid gap-12 md:gap-0 md:grid-cols-1 lg:grid-cols-5 lg:gap-24">
                         <div class="lg:col-span-2">
                             <div class="md:pr-6 lg:pr-0">
                                 <h2 class="text-2xl text-gray-950 dark:text-slate-100 font-semibold">How use InstaListDiff?</h2>
@@ -161,7 +161,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="inline-flex items-center h-max lg:col-span-3 border rounded-[--card-border-radius] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color]">
+                        <div class="inline-flex items-center mt-12 lg:mt-0 h-max lg:col-span-3 border rounded-[--card-border-radius] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color]">
                             <div class="inline-flex flex-col w-full gap-3 p-6 text-gray-600 dark:text-gray-400 *:rounded-[calc(var(--card-border-radius)/2)]">
                                     <p class="text-slate-500 font-thin mb-1 text-xs">Example:</p>
                                     <h3 class="text-slate-100 font-semibold mb-3 text-sm">Accounts that don't follow you back</h3>
@@ -249,8 +249,8 @@
             </div>
         </section>
         <section class="py-12" id="faq-1">
-            <div class="mx-auto px-6 max-w-6xl text-gray-500">
-                <div class="grid gap-12 md:gap-0 md:grid-cols-2 lg:grid-cols-5 lg:gap-24">
+            <div class="px-6 m-auto max-w-6xl 2xl:px-0 text-gray-500">
+                <div class="grid gap-12 md:gap-0 md:grid-cols-1 lg:grid-cols-5 lg:gap-24">
             <div class="lg:col-span-12">
                 <div class="md:pr-6 lg:pr-0">
                     <h2 class="text-2xl text-gray-950 dark:text-slate-100 font-semibold">Frequently asked questions</h2>
@@ -294,13 +294,13 @@ For safety, it's best to use Instagram's built-in features or trusted tools that
                 <div>
                     <ul class="mt-4 list-inside space-y-4">
                         <li>
-                            <a href="#" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500">Privacy Policy</a>
+                            <a href="privacy-policy.html" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500">Privacy Policy</a>
                         </li>
                         <li>
-                            <a href="#" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500">Terms & Conditions</a>
+                            <a href="terms-and-conditions.html" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500">Terms & Conditions</a>
                         </li>
                         <li>
-                            <a href="#" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500">Contact</a>
+                            <a href="mailto:hello@instalistdiff.com" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -310,35 +310,6 @@ For safety, it's best to use Instagram's built-in features or trusted tools that
             </div>
         </div>
     </footer>
-                    
     <script type="module" src="./main.js"></script>
-    <script type="module">
-        import Swiper from 'swiper/bundle';
-        import { Pagination } from 'swiper/modules';
-        import 'swiper/css/bundle';
-        import 'swiper/css/pagination';
-        import 'swiper/css/effect-cards'
-
-        const swiper = new Swiper('.proofSlides', {
-            effect: "cube",
-            cubeEffect : {
-                slideShadows: false,
-                shadow: false,
-                shadowOffset: 20,
-                shadowScale: 0.94,
-            },
-            loop: true,
-            autoplay : {
-                delay: 3000,
-                duration : 500
-            },
-            grabCursor: true,
-            modules: [Pagination],
-            centeredSlides: true,
-            pagination: {
-                el: '.swiper-pagination',
-            }
-        });
-    </script>
     </body>
 </html>

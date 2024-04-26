@@ -1,6 +1,6 @@
 {
   "name": "instalist-diff-html",
-  "description": "A Modern landing page built with Tailwind CSS, Tailus Themer and Vite",
+  "description": "InstaListDiff",
   "private": false,
   "version": "0.1.1",
   "scripts": {
@@ -25,10 +25,8 @@
     "vite",
     "tailus-themer"
   ],
-  "author": "Méschac irung",
-  "license": "ISC",
+  "author": "Erind Hoxha",
   "dependencies": {
-    "@tailus/themer": "^0.0.5",
     "swiper": "^11.0.6"
   }
 }
