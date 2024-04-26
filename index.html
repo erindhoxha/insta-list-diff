@@ -68,6 +68,22 @@
                                     </button>
                                 </span>
                                 <textarea id="followers-textbox" rows="12" placeholder="Paste your JSON code here" class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md text-sm font-mono"></textarea>
+                                <div class="flex items-center mt-2 w-full">
+                                    <span class="text-sm text-slate-100 text-nowrap mr-4">Or upload a file</span>
+                                    <input type="file" id="fileUpload" class="w-[100px] bg-red" />
+                                    <script>
+                                    document.getElementById('fileUpload').addEventListener('change', function(e) {
+                                    const file = e.target.files[0];
+                                    if (!file) return;
+
+                                    const reader = new FileReader();
+                                    reader.onload = function(e) {
+                                        document.getElementById('followers-textbox').value = e.target.result;
+                                    };
+                                    reader.readAsText(file);
+                                    });
+                                    </script>
+                                </div>
                             </div>
                             <div class="flex flex-col h-full w-full">
                                 <span id="followings" class="text-slate-100 flex items-center text-sm bg-blue-600 shadow-inner shadow-white/10 rounded-t-md p-3">
@@ -79,6 +95,22 @@
                                     </button>
                                 </span>
                                 <textarea id="followings-textbox" rows="12" placeholder="Paste your JSON code here" class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md text-sm font-mono"></textarea>
+                                <div class="flex items-center mt-2 w-full">
+                                    <span class="text-sm text-slate-100 text-nowrap mr-4">Or upload a file</span>
+                                    <input type="file" id="fileUploadFollowings" class="w-[100px] bg-red" />
+                                    <script>
+                                    document.getElementById('fileUploadFollowings').addEventListener('change', function(e) {
+                                    const file = e.target.files[0];
+                                    if (!file) return;
+
+                                    const reader = new FileReader();
+                                    reader.onload = function(e) {
+                                        document.getElementById('followings-textbox').value = e.target.result;
+                                    };
+                                    reader.readAsText(file);
+                                    });
+                                    </script>
+                                </div>
                             </div>
                         </div>
                         <div class="mt-8 flex flex-col items-center justify-center gap-4">
