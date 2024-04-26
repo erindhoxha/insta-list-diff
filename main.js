@@ -25,6 +25,13 @@ document.getElementById("submit").addEventListener("click", function() {
    if (notFollowingBack.length === 0) {
     return;
    }
+
+   const count = document.getElementById('accountsCount');
+
+   document.getElementById('accountsCount').classList.remove('hidden');
+
+   count.innerHTML = notFollowingBack.length;
+
    // Iterate over each item in the data
    notFollowingBack.forEach(item => {
      // Create a new li element
