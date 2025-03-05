@@ -72,17 +72,22 @@
                                     <span class="text-sm text-slate-100 text-nowrap mr-4">Or upload a file</span>
                                     <input type="file" accept="application/JSON" id="fileUpload" class="w-[100px] bg-red" />
                                     <script>
-                                    document.getElementById('fileUpload').addEventListener('change', function(e) {
-                                    const file = e.target.files[0];
-                                    if (!file) return;
-
-                                    const reader = new FileReader();
-                                    reader.onload = function(e) {
-                                        document.getElementById('followers-textbox').value = e.target.result;
-                                    };
-                                    reader.readAsText(file);
-                                    });
-                                    </script>
+                                        document.getElementById('fileUpload').addEventListener('change', function(e) {
+                                          const file = e.target.files[0];
+                                          if (!file) return;
+                                        
+                                          const reader = new FileReader();
+                                          reader.onload = function(e) {
+                                            const fileContent = e.target.result;
+                                            document.getElementById('followers-textbox').value = fileContent;
+                                        
+                                            // Count the number of lines
+                                            const lineCount = fileContent.split('\n').length;
+                                            document.getElementById('followers-count').textContent = lineCount;
+                                          };
+                                          reader.readAsText(file);
+                                        });
+                                        </script>
                                 </div>
                             </div>
                             <div class="flex flex-col h-full w-full">
@@ -99,16 +104,21 @@
                                     <span class="text-sm text-slate-100 text-nowrap mr-4">Or upload a file</span>
                                     <input type="file" accept="application/JSON" id="fileUploadFollowings" class="w-[100px] bg-red" />
                                     <script>
-                                    document.getElementById('fileUploadFollowings').addEventListener('change', function(e) {
-                                    const file = e.target.files[0];
-                                    if (!file) return;
-
-                                    const reader = new FileReader();
-                                    reader.onload = function(e) {
-                                        document.getElementById('followings-textbox').value = e.target.result;
-                                    };
-                                    reader.readAsText(file);
-                                    });
+                                        document.getElementById('fileUploadFollowings').addEventListener('change', function(e) {
+                                          const file = e.target.files[0];
+                                          if (!file) return;
+                                        
+                                          const reader = new FileReader();
+                                          reader.onload = function(e) {
+                                            const fileContent = e.target.result;
+                                            document.getElementById('followings-textbox').value = fileContent;
+                                        
+                                            // Count the number of lines
+                                            const lineCount = fileContent.split('\n').length;
+                                            document.getElementById('followings-count').textContent = lineCount;
+                                          };
+                                          reader.readAsText(file);
+                                        });
                                     </script>
                                 </div>
                             </div>
@@ -336,7 +346,7 @@ For safety, it's best to use Instagram's built-in features or trusted tools that
                             <a href="terms-and-conditions.html" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500">Terms & Conditions</a>
                         </li>
                         <li>
-                            <a href="mailto:hello@instalistdiff.com" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500">Contact</a>
+                            <a href="mailto:hello@erindhoxha.dev" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500">Contact</a>
                         </li>
                     </ul>
                 </div>
