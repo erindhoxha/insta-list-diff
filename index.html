@@ -70,22 +70,38 @@
                                 <textarea id="followers-textbox" rows="12" placeholder="Paste your JSON code here" class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md rounded-t-none text-sm font-mono"></textarea>
                                 <div class="flex items-center mt-2 w-full">
                                     <span class="text-sm text-slate-100 text-nowrap mr-4">Or upload a file</span>
-                                    <input type="file" accept="application/JSON" id="fileUpload" class="w-[100px] bg-red" />
+                                    <input type="file" accept="application/JSON" id="fileUpload" class="w-[120px] bg-red" multiple />
                                     <script>
-                                        document.getElementById('fileUpload').addEventListener('change', function(e) {
-                                          const file = e.target.files[0];
-                                          if (!file) return;
-                                        
-                                          const reader = new FileReader();
-                                          reader.onload = function(e) {
-                                            const fileContent = e.target.result;
-                                            document.getElementById('followers-textbox').value = fileContent;
-                                        
-                                            // Count the number of lines
-                                            const lineCount = fileContent.split('\n').length;
-                                            document.getElementById('followers-count').textContent = lineCount;
-                                          };
-                                          reader.readAsText(file);
+                                        document.getElementById('fileUpload').addEventListener('change', function (e) {
+                                            const files = Array.from(e.target.files);
+                                            if (!files.length) return;
+
+                                            let allData = [];
+                                            let filesRead = 0;
+
+                                            files.forEach(file => {
+                                                const reader = new FileReader();
+                                                reader.onload = function(event) {
+                                                try {
+                                                    const json = JSON.parse(event.target.result);
+                                                    if (Array.isArray(json)) {
+                                                    allData = allData.concat(json);
+                                                    } else if (json && typeof json === 'object' && json.length === undefined) {
+                                                    allData.push(json);
+                                                    }
+                                                } catch (err) {
+                                                    alert(`Error parsing ${file.name}: ${err.message}`);
+                                                }
+                                                filesRead++;
+                                                if (filesRead === files.length) {
+                                                    const textarea = document.getElementById('followers-textbox');
+                                                    textarea.value = JSON.stringify(allData, null, 2);
+                                                    const lineCount = textarea.value.split('\n').length;
+                                                    document.getElementById('followers-count').textContent = lineCount;
+                                                }
+                                                };
+                                                reader.readAsText(file);
+                                            });
                                         });
                                         </script>
                                 </div>
@@ -102,22 +118,38 @@
                                 <textarea id="followings-textbox" rows="12" placeholder="Paste your JSON code here" class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md rounded-t-none text-sm font-mono"></textarea>
                                 <div class="flex items-center mt-2 w-full">
                                     <span class="text-sm text-slate-100 text-nowrap mr-4">Or upload a file</span>
-                                    <input type="file" accept="application/JSON" id="fileUploadFollowings" class="w-[100px] bg-red" />
+                                    <input type="file" accept="application/JSON" id="fileUploadFollowings" class="w-[120px] bg-red" multiple />
                                     <script>
-                                        document.getElementById('fileUploadFollowings').addEventListener('change', function(e) {
-                                          const file = e.target.files[0];
-                                          if (!file) return;
-                                        
-                                          const reader = new FileReader();
-                                          reader.onload = function(e) {
-                                            const fileContent = e.target.result;
-                                            document.getElementById('followings-textbox').value = fileContent;
-                                        
-                                            // Count the number of lines
-                                            const lineCount = fileContent.split('\n').length;
-                                            document.getElementById('followings-count').textContent = lineCount;
-                                          };
-                                          reader.readAsText(file);
+                                          document.getElementById('fileUploadFollowings').addEventListener('change', function (e) {
+                                            const files = Array.from(e.target.files);
+                                            if (!files.length) return;
+
+                                            let allData = [];
+                                            let filesRead = 0;
+
+                                            files.forEach(file => {
+                                                const reader = new FileReader();
+                                                reader.onload = function(event) {
+                                                try {
+                                                    const json = JSON.parse(event.target.result);
+                                                    if (Array.isArray(json)) {
+                                                    allData = allData.concat(json);
+                                                    } else if (json && typeof json === 'object' && json.length === undefined) {
+                                                    allData.push(json);
+                                                    }
+                                                } catch (err) {
+                                                    alert(`Error parsing ${file.name}: ${err.message}`);
+                                                }
+                                                filesRead++;
+                                                if (filesRead === files.length) {
+                                                    const textarea = document.getElementById('followings-textbox');
+                                                    textarea.value = JSON.stringify(allData, null, 2);
+                                                    const lineCount = textarea.value.split('\n').length;
+                                                    document.getElementById('followings-count').textContent = lineCount;
+                                                }
+                                                };
+                                                reader.readAsText(file);
+                                            });
                                         });
                                     </script>
                                 </div>
