@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
     <head>
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="./assets/css/tailwind.css" />
@@ -28,367 +29,707 @@
         <meta name="twitter:description" content="Find who unfollowed you without using third-party apps." />
         <meta name="twitter:image" content="/og-cover.png" />
     </head>
-    
-    <body class="bg-white dark:bg-gray-900 dark:before:fixed dark:before:-z-50 dark:before:inset-0 dark:before:bg-gray-950/50">
-    <header>
-        <nav class="fixed overflow-hidden z-20 w-full bg-white/80 dark:bg-gray-950/0 dark:shadow-md rounded-b-lg dark:shadow-gray-950/10 border-b border-[--ui-light-border-color] border-x dark:border-[--ui-dark-border-color] backdrop-blur-2xl">
-            <div class="px-6 m-auto max-w-6xl 2xl:px-0">
-                <div class="flex flex-wrap items-center justify-between py-2 sm:py-4">
-                    <div class="w-full lg:w-auto text-slate-100 text-xl font-bold">
-                        <a href="/" aria-label="instagram-list-diff" class="flex flex-col">
-                            <span class="block">InstaListDiff</span>
-                            <span class="text-[10px] leading-[12px] font-thin">Find who unfollowed you without using third-party apps</span>
-                        </a>
+
+    <body
+        class="bg-white dark:bg-gray-900 dark:before:fixed dark:before:-z-50 dark:before:inset-0 dark:before:bg-gray-950/50">
+        <header>
+            <nav
+                class="fixed overflow-hidden z-20 w-full bg-white/80 dark:bg-gray-950/0 dark:shadow-md rounded-b-lg dark:shadow-gray-950/10 border-b border-[--ui-light-border-color] border-x dark:border-[--ui-dark-border-color] backdrop-blur-2xl">
+                <div class="px-6 m-auto max-w-6xl 2xl:px-0">
+                    <div class="flex flex-wrap items-center justify-between py-2 sm:py-4">
+                        <div class="w-full lg:w-auto text-slate-100 text-xl font-bold">
+                            <a href="/" aria-label="instagram-list-diff" class="flex flex-col">
+                                <span class="block">InstaListDiff</span>
+                                <span class="text-[10px] leading-[12px] font-thin">Find who unfollowed you without using
+                                    third-party apps</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
-    </header>
-    <main class="overflow-hidden">
-        <section class="relative">
-            <div class="relative pt-24 lg:pt-28">
-                <div class="mx-auto px-6 max-w-7xl md:px-12">
-                    <div class="text-center sm:mx-auto sm:w-10/12 lg:mr-auto lg:mt-0 lg:w-4/5">
-                        <h1 class="mt-8 text-wrap text-4xl font-semibold text-slate-100 max-w-[500px] text-center mx-auto mb-4">Find unfollowers without using third-party apps</h1>
-                        <p class="text-slate-100 text-xs font-semibold block mt-4">Frequent questions asked:</p>
-                        <a href="#help" class="text-slate-100 text-xs font-semibold underline mt-4 inline">How to use?</a>
-                        <a href="#faq-1" class="text-slate-100 text-xs font-semibold underline mt-4 inline ml-2">Why is it safe?</a>
-                        <a href="#faq-1" class="text-slate-100 text-xs font-semibold underline mt-4 inline ml-2">Do I need to pay?</a>
-                        <a href="#faq-1" class="text-slate-100 text-xs font-semibold underline mt-4 inline ml-2">FAQ</a>
-                        <a href="mailto:hello@instalistdiff.com" class="text-slate-100 text-xs font-semibold underline mt-4 inline ml-2">Help</a>
+            </nav>
+        </header>
+        <main class="overflow-hidden">
+            <section class="relative">
+                <div class="relative pt-24 lg:pt-28">
+                    <div class="mx-auto px-6 max-w-7xl md:px-12">
+                        <div class="text-center sm:mx-auto sm:w-10/12 lg:mr-auto lg:mt-0 lg:w-4/5">
+                            <h1
+                                class="mt-8 text-wrap text-4xl font-semibold text-slate-100 max-w-[500px] text-center mx-auto mb-4">
+                                Find unfollowers without using third-party apps</h1>
+                            <p class="text-slate-100 text-xs font-semibold block mt-4">Frequent questions asked:</p>
+                            <a href="#help" class="text-slate-100 text-xs font-semibold underline mt-4 inline">How to
+                                use?</a>
+                            <a href="#faq-1" class="text-slate-100 text-xs font-semibold underline mt-4 inline ml-2">Why
+                                is it safe?</a>
+                            <a href="#faq-1" class="text-slate-100 text-xs font-semibold underline mt-4 inline ml-2">Do
+                                I need to pay?</a>
+                            <a href="#faq-1"
+                                class="text-slate-100 text-xs font-semibold underline mt-4 inline ml-2">FAQ</a>
+                            <a href="mailto:hello@instalistdiff.com"
+                                class="text-slate-100 text-xs font-semibold underline mt-4 inline ml-2">Help</a>
 
-                        <div class="mt-8 flex flex-col md:flex-row md:flex gap-[24px]">
-                            <div class="flex flex-col h-full w-full">
-                                <span id="followers" class="text-slate-100 flex items-center text-sm bg-primary-600 shadow-inner shadow-white/10 rounded-t-md p-3">
-                                    Followers
-                                    <span class="bg-green-700 px-2 py-1 rounded-full text-xs ml-2">json</span>
-                                    <span id="followers-count" class="ml-auto bg-green-500 py-1 px-2 rounded-full">0</span>
-                                    <button id="followers-clear" class="bg-primary-500 text-slate-100 rounded-full py-1 px-2 ml-2">
-                                        Clear
-                                    </button>
-                                </span>
-                                <textarea id="followers-textbox" rows="12" placeholder="Paste your JSON code here" class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md rounded-t-none text-sm font-mono"></textarea>
-                                <div class="flex items-center mt-2 w-full">
-                                    <span class="text-sm text-slate-100 text-nowrap mr-4">Or upload a file</span>
-                                    <input type="file" accept="application/JSON" id="fileUpload" class="w-[120px] bg-red" multiple />
-                                    <script>
-                                        document.getElementById('fileUpload').addEventListener('change', function (e) {
-                                            const files = Array.from(e.target.files);
-                                            if (!files.length) return;
+                            <div class="mt-8 flex flex-col md:flex-row md:flex gap-[24px]">
+                                <div class="flex flex-col h-full w-full">
+                                    <span id="followers"
+                                        class="text-slate-100 flex items-center text-sm bg-primary-600 shadow-inner shadow-white/10 rounded-t-md p-3">
+                                        Followers
+                                        <span class="bg-green-700 px-2 py-1 rounded-full text-xs ml-2">json</span>
+                                        <span id="followers-count"
+                                            class="ml-auto bg-green-500 py-1 px-2 rounded-full">0</span>
+                                        <button id="followers-clear"
+                                            class="bg-primary-500 text-slate-100 rounded-full py-1 px-2 ml-2">
+                                            Clear
+                                        </button>
+                                    </span>
+                                    <textarea id="followers-textbox" rows="12" placeholder="Paste your JSON code here"
+                                        class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md rounded-t-none text-sm font-mono"></textarea>
+                                    <div class="flex flex-col items-start mt-2 w-full">
+                                        <div class="flex justify-between items-center w-full">
+                                            <span class="text-sm text-slate-100 text-nowrap mr-4">Or upload file(s)</span>
+                                            <input type="file" accept="application/JSON" id="fileUpload"
+                                                class="w-[120px] bg-red" multiple />
+                                        </div>
+                                        <p class="text-sm text-slate-400 block">(Example: <span class="font-bold">followers_1.json</span> and more)</p>
+                                        <script>
+                                            document.getElementById('fileUpload').addEventListener('change', function (e) {
+                                                const files = Array.from(e.target.files);
+                                                if (!files.length) return;
 
-                                            let allData = [];
-                                            let filesRead = 0;
+                                                let allData = [];
+                                                let filesRead = 0;
 
-                                            files.forEach(file => {
-                                                const reader = new FileReader();
-                                                reader.onload = function(event) {
-                                                try {
-                                                    const json = JSON.parse(event.target.result);
-                                                    if (Array.isArray(json)) {
-                                                    allData = allData.concat(json);
-                                                    } else if (json && typeof json === 'object' && json.length === undefined) {
-                                                    allData.push(json);
-                                                    }
-                                                } catch (err) {
-                                                    alert(`Error parsing ${file.name}: ${err.message}`);
-                                                }
-                                                filesRead++;
-                                                if (filesRead === files.length) {
-                                                    const textarea = document.getElementById('followers-textbox');
-                                                    textarea.value = JSON.stringify(allData, null, 2);
-                                                    const lineCount = textarea.value.split('\n').length;
-                                                    document.getElementById('followers-count').textContent = lineCount;
-                                                }
-                                                };
-                                                reader.readAsText(file);
+                                                files.forEach(file => {
+                                                    const reader = new FileReader();
+                                                    reader.onload = function (event) {
+                                                        try {
+                                                            const json = JSON.parse(event.target.result);
+                                                            if (Array.isArray(json)) {
+                                                                allData = allData.concat(json);
+                                                            } else if (json && typeof json === 'object' && json.length === undefined) {
+                                                                allData.push(json);
+                                                            }
+                                                        } catch (err) {
+                                                            alert(`Error parsing ${file.name}: ${err.message}`);
+                                                        }
+                                                        filesRead++;
+                                                        if (filesRead === files.length) {
+                                                            const textarea = document.getElementById('followers-textbox');
+                                                            textarea.value = JSON.stringify(allData, null, 2);
+                                                            const lineCount = textarea.value.split('\n').length;
+                                                            document.getElementById('followers-count').textContent = lineCount;
+                                                        }
+                                                    };
+                                                    reader.readAsText(file);
+                                                });
                                             });
-                                        });
                                         </script>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="flex flex-col h-full w-full">
-                                <span id="followings" class="text-slate-100 flex items-center text-sm bg-blue-600 shadow-inner shadow-white/10 rounded-t-md p-3">
-                                    Followings
-                                    <span class="bg-blue-700 px-2 py-1 rounded-full text-xs ml-2">json</span>
-                                    <span id="followings-count" class="ml-auto bg-blue-500 py-1 px-2 rounded-full">0</span>
-                                    <button id="followings-clear" class="bg-blue-500 text-slate-100 rounded-full py-1 px-2 ml-2">
-                                        Clear
-                                    </button>
-                                </span>
-                                <textarea id="followings-textbox" rows="12" placeholder="Paste your JSON code here" class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md rounded-t-none text-sm font-mono"></textarea>
-                                <div class="flex items-center mt-2 w-full">
-                                    <span class="text-sm text-slate-100 text-nowrap mr-4">Or upload a file</span>
-                                    <input type="file" accept="application/JSON" id="fileUploadFollowings" class="w-[120px] bg-red" multiple />
-                                    <script>
-                                          document.getElementById('fileUploadFollowings').addEventListener('change', function (e) {
-                                            const files = Array.from(e.target.files);
-                                            if (!files.length) return;
+                                <div class="flex flex-col h-full w-full">
+                                    <span id="followings"
+                                        class="text-slate-100 flex items-center text-sm bg-blue-600 shadow-inner shadow-white/10 rounded-t-md p-3">
+                                        Followings
+                                        <span class="bg-blue-700 px-2 py-1 rounded-full text-xs ml-2">json</span>
+                                        <span id="followings-count"
+                                            class="ml-auto bg-blue-500 py-1 px-2 rounded-full">0</span>
+                                        <button id="followings-clear"
+                                            class="bg-blue-500 text-slate-100 rounded-full py-1 px-2 ml-2">
+                                            Clear
+                                        </button>
+                                    </span>
+                                    <textarea id="followings-textbox" rows="12" placeholder="Paste your JSON code here"
+                                        class="bg-primary-50 resize-none p-3 flex-grow rounded-b-md rounded-t-none text-sm font-mono"></textarea>
+                                    <div class="flex flex-col items-start mt-2 w-full">
+                                        <div class="flex justify-between items-center w-full">
+                                            <span class="text-sm text-slate-100 text-nowrap mr-4">Or upload file(s)</span>
+                                            <input type="file" accept="application/JSON" id="fileUploadFollowings"
+                                                class="w-[120px] bg-red" multiple />
+                                        </div>
+                                        <p class="text-sm text-slate-400 block">(Example: <span class="font-bold">followings_1.json</span> and more)</p>
+                                        <script>
+                                            document.getElementById('fileUploadFollowings').addEventListener('change', function (e) {
+                                                const files = Array.from(e.target.files);
+                                                if (!files.length) return;
 
-                                            let allData = [];
-                                            let filesRead = 0;
+                                                let allData = [];
+                                                let filesRead = 0;
 
-                                            files.forEach(file => {
-                                                const reader = new FileReader();
-                                                reader.onload = function(event) {
-                                                try {
-                                                    const json = JSON.parse(event.target.result);
-                                                    if (Array.isArray(json)) {
-                                                    allData = allData.concat(json);
-                                                    } else if (json && typeof json === 'object' && json.length === undefined) {
-                                                    allData.push(json);
-                                                    }
-                                                } catch (err) {
-                                                    alert(`Error parsing ${file.name}: ${err.message}`);
-                                                }
-                                                filesRead++;
-                                                if (filesRead === files.length) {
-                                                    const textarea = document.getElementById('followings-textbox');
-                                                    textarea.value = JSON.stringify(allData, null, 2);
-                                                    const lineCount = textarea.value.split('\n').length;
-                                                    document.getElementById('followings-count').textContent = lineCount;
-                                                }
-                                                };
-                                                reader.readAsText(file);
+                                                files.forEach(file => {
+                                                    const reader = new FileReader();
+                                                    reader.onload = function (event) {
+                                                        try {
+                                                            const json = JSON.parse(event.target.result);
+                                                            if (Array.isArray(json)) {
+                                                                allData = allData.concat(json);
+                                                            } else if (json && typeof json === 'object' && json.length === undefined) {
+                                                                allData.push(json);
+                                                            }
+                                                        } catch (err) {
+                                                            alert(`Error parsing ${file.name}: ${err.message}`);
+                                                        }
+                                                        filesRead++;
+                                                        if (filesRead === files.length) {
+                                                            const textarea = document.getElementById('followings-textbox');
+                                                            textarea.value = JSON.stringify(allData, null, 2);
+                                                            const lineCount = textarea.value.split('\n').length;
+                                                            document.getElementById('followings-count').textContent = lineCount;
+                                                        }
+                                                    };
+                                                    reader.readAsText(file);
+                                                });
                                             });
-                                        });
-                                    </script>
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-8 flex flex-col items-center justify-center gap-4">
+                                <div
+                                    class="p-1 rounded-[calc(var(--btn-border-radius)+4px)] bg-gray-950/5 border dark:border-white/10 dark:bg-white/5">
+                                    <button id="submit"
+                                        class="*:select-none dark:shadow-primary-500/10 *:disabled:opacity-20 disabled:*:text-gray-300 disabled:dark:*:text-gray-700 dark:*:disabled:!text-slate-100 group relative z-[1] flex h-11 items-center justify-center gap-1.5 rounded-[--btn-border-radius] border border-primary-600 bg-primary-500 px-4 text-base text-slate-100 shadow-md shadow-primary-200 before:absolute before:inset-0 before:rounded-[calc(var(--btn-border-radius)-1px)] before:border before:border-primary-500 before:bg-gradient-to-b before:from-primary-600 hover:bg-primary-600 active:bg-primary-700 disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-950/40 disabled:before:border-transparent disabled:before:bg-gray-100 disabled:before:from-transparent dark:border-0 dark:bg-primary-600 dark:before:border-0 dark:before:border-t dark:before:border-primary-400 dark:before:shadow-inner dark:before:shadow-white/10 dark:hover:bg-primary-700 dark:active:bg-primary-800 dark:active:before:from-primary-700 dark:disabled:border dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:disabled:before:bg-gray-900 dark:disabled:before:from-gray-900 dark:disabled:before:shadow-none [&>*:not(.sr-only)]:relative">
+                                        <svg class="size-5 relative" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path class="opacity-20 dark:opacity-50"
+                                                d="M7.40705 15L5.10627 16.7375C5.0234 16.8039 4.92499 16.848 4.82033 16.8658C4.71567 16.8836 4.6082 16.8744 4.50806 16.8392C4.40793 16.8039 4.31842 16.7437 4.24798 16.6643C4.17755 16.5849 4.12851 16.4888 4.10549 16.3852L3.13986 12.0391C3.11906 11.9458 3.11993 11.8489 3.14241 11.756C3.16489 11.6631 3.20839 11.5766 3.26955 11.5031L5.63752 8.66484C5.5469 10.4883 5.99221 12.6117 7.40705 15ZM16.7305 11.5031L14.3625 8.66484C14.4571 10.4883 14.0078 12.6117 12.593 15L14.8938 16.7375C14.9766 16.8039 15.075 16.848 15.1797 16.8658C15.2844 16.8836 15.3918 16.8744 15.492 16.8392C15.5921 16.8039 15.6816 16.7437 15.7521 16.6643C15.8225 16.5849 15.8715 16.4888 15.8946 16.3852L16.8602 12.0391C16.881 11.9458 16.8801 11.8489 16.8576 11.756C16.8351 11.6631 16.7917 11.5766 16.7305 11.5031Z"
+                                                fill="currentColor"></path>
+                                            <path
+                                                d="M11.875 17.5C11.875 17.6658 11.8092 17.8247 11.6919 17.9419C11.5747 18.0591 11.4158 18.125 11.25 18.125H8.75C8.58424 18.125 8.42527 18.0591 8.30806 17.9419C8.19085 17.8247 8.125 17.6658 8.125 17.5C8.125 17.3342 8.19085 17.1753 8.30806 17.0581C8.42527 16.9408 8.58424 16.875 8.75 16.875H11.25C11.4158 16.875 11.5747 16.9408 11.6919 17.0581C11.8092 17.1753 11.875 17.3342 11.875 17.5ZM10 8.75C10.1854 8.75 10.3667 8.69501 10.5208 8.592C10.675 8.48899 10.7952 8.34257 10.8661 8.17126C10.9371 7.99996 10.9557 7.81146 10.9195 7.6296C10.8833 7.44774 10.794 7.2807 10.6629 7.14959C10.5318 7.01847 10.3648 6.92919 10.1829 6.89301C10.001 6.85684 9.81254 6.8754 9.64123 6.94636C9.46993 7.01732 9.32351 7.13748 9.2205 7.29165C9.11748 7.44582 9.0625 7.62708 9.0625 7.8125C9.0625 8.06114 9.16127 8.2996 9.33709 8.47541C9.5129 8.65123 9.75136 8.75 10 8.75ZM17.4703 12.1742L16.5047 16.5203C16.4589 16.7267 16.3615 16.9181 16.2216 17.0766C16.0817 17.2351 15.9039 17.3555 15.7048 17.4266C15.5057 17.4977 15.2918 17.5172 15.0832 17.4831C14.8745 17.4491 14.6779 17.3627 14.5117 17.232L12.3836 15.625H7.61797L5.48828 17.232C5.3221 17.3627 5.12549 17.4491 4.91684 17.4831C4.70819 17.5172 4.49431 17.4977 4.29522 17.4266C4.09613 17.3555 3.91832 17.2351 3.77842 17.0766C3.63853 16.9181 3.54112 16.7267 3.49531 16.5203L2.52969 12.1742C2.48873 11.9877 2.4908 11.7943 2.53574 11.6087C2.58068 11.4231 2.66731 11.2502 2.78906 11.1031L5.02031 8.42656C5.0952 7.44292 5.32102 6.47666 5.68984 5.56172C6.69766 3.03515 8.50234 1.45 9.23437 0.885935C9.45348 0.716157 9.72281 0.624023 10 0.624023C10.2772 0.624023 10.5465 0.716157 10.7656 0.885935C11.4953 1.45 13.3023 3.03515 14.3102 5.56172C14.679 6.47666 14.9048 7.44292 14.9797 8.42656L17.2109 11.1031C17.3327 11.2502 17.4193 11.4231 17.4643 11.6087C17.5092 11.7943 17.5113 11.9877 17.4703 12.1742ZM7.76797 14.375H12.232C13.882 11.4422 14.1906 8.63437 13.1492 6.025C12.2305 3.72187 10.507 2.26562 10 1.875C9.49141 2.26562 7.76797 3.72187 6.84922 6.025C5.80937 8.63437 6.11797 11.4422 7.76797 14.375ZM6.59609 14.832C5.75495 13.3034 5.24453 11.801 5.06484 10.325L3.75 11.9031L4.71562 16.25L4.72969 16.2398L6.59609 14.832ZM16.25 11.9031L14.9352 10.325C14.757 11.7979 14.2477 13.3003 13.407 14.832L15.2703 16.2383L15.2844 16.2484L16.25 11.9031Z"
+                                                fill="currentColor"></path>
+                                        </svg>
+                                        <span class="text-nowrap">Generate List</span></button>
+                                </div>
+                                <button
+                                    class="hidden *:select-none *:disabled:opacity-20 dark:*:disabled:!text-slate-100 dark:hover:bg-gray-500/15 group h-9 items-center justify-center gap-1.5 rounded-[--btn-border-radius] bg-gray-100 px-3 text-base text-gray-800 hover:bg-gray-200/75 active:bg-gray-100 disabled:border disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-950 dark:bg-gray-500/10 dark:text-gray-300 dark:active:bg-gray-500/10 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 [&>*:not(.sr-only)]:relative">
+                                    <span class="text-sm">Learn more</span>
+                                    <svg class="-mr-1" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                        viewBox="0 0 48 48">
+                                        <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="4" d="m19 12l12 12l-12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="-mx-6 relative mt-8 sm:mt-12 max-w-xl sm:mx-auto">
+                            <div
+                                class="absolute inset-0 -top-8 left-1/2 -z-20 h-56 w-full -translate-x-1/2 dark:opacity-10 [background-image:linear-gradient(to_bottom,transparent_98%,theme(colors.gray.200/75%)_98%),linear-gradient(to_right,transparent_94%,_theme(colors.gray.200/75%)_94%)] [background-size:16px_35px] [mask:radial-gradient(black,transparent_95%)]">
+                            </div>
+                            <div
+                                class="absolute top-12 inset-x-0 w-2/3 h-1/3 -z-[1] rounded-full bg-primary-300 dark:bg-white/10 mx-auto blur-3xl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="mx-auto px-6 max-w-2xl">
+                    <h3 id="accountsThatDontFollowBack" class="text-slate-100 font-semibold mb-3 text-sm hidden"><span
+                            id="accountsCount" class="hidden"></span> accounts that don't follow you back</h3>
+                    <div class="text-slate-100 text-sm overflow-hidden">
+                        <ul id="not-following-back-list" class="flex flex-col gap-3">
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="help">
+                <div class="py-12 lg:py-36">
+                    <div class="px-6 m-auto max-w-6xl 2xl:px-0 text-gray-500">
+                        <div class="grid gap-12 md:gap-0 md:grid-cols-1 lg:grid-cols-5 lg:gap-24">
+                            <div class="lg:col-span-2">
+                                <div class="md:pr-6 lg:pr-0">
+                                    <h2 class="text-2xl text-gray-950 dark:text-slate-100 font-semibold">How use
+                                        InstaListDiff?</h2>
+                                </div>
+
+                                <ul
+                                    class="mt-3 divide-y border-y border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] divide-[--ui-light-border-color] dark:divide-[--ui-dark-border-color] *:py-3 *:gap-3 text-gray-700 dark:text-gray-300">
+                                    <li class="font-semibold">
+                                        Step 1.
+                                        Download Your Data from Instagram:
+                                        <span class="block mt-3 font-thin">
+                                            First, you'll need to download your data from Instagram. Instagram provides
+                                            an option to download certain information about your account, including your
+                                            list of followers and followings, in a JSON format. This can be done through
+                                            your Instagram settings.
+                                        </span>
+                                        <span class="mt-2 mb-0 flex items-center gap-[6px]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px"
+                                                height="24px">
+                                                <radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035"
+                                                    r="44.899" gradientUnits="userSpaceOnUse">
+                                                    <stop offset="0" stop-color="#fd5" />
+                                                    <stop offset=".328" stop-color="#ff543f" />
+                                                    <stop offset=".348" stop-color="#fc5245" />
+                                                    <stop offset=".504" stop-color="#e64771" />
+                                                    <stop offset=".643" stop-color="#d53e91" />
+                                                    <stop offset=".761" stop-color="#cc39a4" />
+                                                    <stop offset=".841" stop-color="#c837ab" />
+                                                </radialGradient>
+                                                <path fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
+                                                    d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                                                <radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54"
+                                                    r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)"
+                                                    gradientUnits="userSpaceOnUse">
+                                                    <stop offset="0" stop-color="#4168c9" />
+                                                    <stop offset=".999" stop-color="#4168c9" stop-opacity="0" />
+                                                </radialGradient>
+                                                <path fill="url(#yOrnnhliCrdS2gy~4tD8mb)"
+                                                    d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                                                <path fill="#fff"
+                                                    d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z" />
+                                                <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
+                                                <path fill="#fff"
+                                                    d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z" />
+                                            </svg>
+                                            <span class="block"><a class="text-slate-100 mt-2 text-sm underline"
+                                                    target="_blank" rel="noreferrer"
+                                                    href="https://help.instagram.com/181231772500920">You can view the
+                                                    steps from Instagram's website.</a></span>
+                                        </span>
+                                        <span class="text-sm mt-3 flex items-center">To see all results, in Date range
+                                            choose "All time".</span>
+                                    </li>
+                                    <li class="font-semibold">
+                                        Step 2.
+                                        Paste JSON Code:
+                                        <span class="block mt-3 font-thin">
+                                            You'll see two textboxes labeled "Followers" and "Followings." Simply paste
+                                            the JSON code containing your list of followers into the "Followers" box,
+                                            and paste the JSON code containing your list of followings into the
+                                            "Followings" box.
+                                        </span>
+                                    </li>
+                                    <li class="font-semibold">
+                                        Step 3.
+                                        Analyze the Results:
+                                        <span class="block mt-3 font-thin">
+                                            After pasting the JSON code, click on the "Compare" or "Find Difference"
+                                            button to analyze the data. InstaListDiff will then process the information
+                                            and provide you with the differences between your followers and followings.
+                                        </span>
+                                    </li>
+                                    <li class="font-semibold">
+                                        Step 4.
+                                        Review the Results:
+                                        <span class="block mt-3 font-thin">
+                                            You'll receive a clear breakdown of who follows you but you don't follow
+                                            back, and vice versa. This can be helpful for managing your Instagram
+                                            connections and understanding your network better.
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div
+                                class="inline-flex items-center mt-4 lg:mt-12 lg:mt-0 h-max lg:col-span-3 border rounded-[--card-border-radius] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color]">
+                                <div
+                                    class="inline-flex flex-col w-full gap-3 p-6 text-gray-600 dark:text-gray-400 *:rounded-[calc(var(--card-border-radius)/2)]">
+                                    <p class="text-slate-500 font-thin mb-1 text-xs">Example:</p>
+                                    <h3 class="text-slate-100 font-semibold mb-3 text-sm">Accounts that don't follow you
+                                        back</h3>
+                                    <div class="text-slate-100 text-sm w-full">
+                                        <ul id="not-following-back-list" class="flex flex-col gap-3">
+                                            <li
+                                                class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
+                                                <span>
+                                                    @username
+                                                </span>
+                                                <a class="text-xs flex items-center gap-2" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                                                        width="24px" height="24px">
+                                                        <radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38"
+                                                            cy="42.035" r="44.899" gradientUnits="userSpaceOnUse">
+                                                            <stop offset="0" stop-color="#fd5" />
+                                                            <stop offset=".328" stop-color="#ff543f" />
+                                                            <stop offset=".348" stop-color="#fc5245" />
+                                                            <stop offset=".504" stop-color="#e64771" />
+                                                            <stop offset=".643" stop-color="#d53e91" />
+                                                            <stop offset=".761" stop-color="#cc39a4" />
+                                                            <stop offset=".841" stop-color="#c837ab" />
+                                                        </radialGradient>
+                                                        <path fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
+                                                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                                                        <radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786"
+                                                            cy="5.54" r="29.813"
+                                                            gradientTransform="matrix(1 0 0 .6663 0 1.849)"
+                                                            gradientUnits="userSpaceOnUse">
+                                                            <stop offset="0" stop-color="#4168c9" />
+                                                            <stop offset=".999" stop-color="#4168c9" stop-opacity="0" />
+                                                        </radialGradient>
+                                                        <path fill="url(#yOrnnhliCrdS2gy~4tD8mb)"
+                                                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                                                        <path fill="#fff"
+                                                            d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z" />
+                                                        <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
+                                                        <path fill="#fff"
+                                                            d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z" />
+                                                    </svg>
+                                                    View instagram
+                                                </a>
+                                            </li>
+                                            <li
+                                                class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
+                                                <span>
+                                                    @username
+                                                </span>
+                                                <a class="text-xs flex items-center gap-2" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                                                        width="24px" height="24px">
+                                                        <radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38"
+                                                            cy="42.035" r="44.899" gradientUnits="userSpaceOnUse">
+                                                            <stop offset="0" stop-color="#fd5" />
+                                                            <stop offset=".328" stop-color="#ff543f" />
+                                                            <stop offset=".348" stop-color="#fc5245" />
+                                                            <stop offset=".504" stop-color="#e64771" />
+                                                            <stop offset=".643" stop-color="#d53e91" />
+                                                            <stop offset=".761" stop-color="#cc39a4" />
+                                                            <stop offset=".841" stop-color="#c837ab" />
+                                                        </radialGradient>
+                                                        <path fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
+                                                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                                                        <radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786"
+                                                            cy="5.54" r="29.813"
+                                                            gradientTransform="matrix(1 0 0 .6663 0 1.849)"
+                                                            gradientUnits="userSpaceOnUse">
+                                                            <stop offset="0" stop-color="#4168c9" />
+                                                            <stop offset=".999" stop-color="#4168c9" stop-opacity="0" />
+                                                        </radialGradient>
+                                                        <path fill="url(#yOrnnhliCrdS2gy~4tD8mb)"
+                                                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                                                        <path fill="#fff"
+                                                            d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z" />
+                                                        <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
+                                                        <path fill="#fff"
+                                                            d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z" />
+                                                    </svg>
+                                                    View instagram
+                                                </a>
+                                            </li>
+                                            <li
+                                                class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
+                                                <span>
+                                                    @username
+                                                </span>
+                                                <a class="text-xs flex items-center gap-2" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                                                        width="24px" height="24px">
+                                                        <radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38"
+                                                            cy="42.035" r="44.899" gradientUnits="userSpaceOnUse">
+                                                            <stop offset="0" stop-color="#fd5" />
+                                                            <stop offset=".328" stop-color="#ff543f" />
+                                                            <stop offset=".348" stop-color="#fc5245" />
+                                                            <stop offset=".504" stop-color="#e64771" />
+                                                            <stop offset=".643" stop-color="#d53e91" />
+                                                            <stop offset=".761" stop-color="#cc39a4" />
+                                                            <stop offset=".841" stop-color="#c837ab" />
+                                                        </radialGradient>
+                                                        <path fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
+                                                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                                                        <radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786"
+                                                            cy="5.54" r="29.813"
+                                                            gradientTransform="matrix(1 0 0 .6663 0 1.849)"
+                                                            gradientUnits="userSpaceOnUse">
+                                                            <stop offset="0" stop-color="#4168c9" />
+                                                            <stop offset=".999" stop-color="#4168c9" stop-opacity="0" />
+                                                        </radialGradient>
+                                                        <path fill="url(#yOrnnhliCrdS2gy~4tD8mb)"
+                                                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                                                        <path fill="#fff"
+                                                            d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z" />
+                                                        <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
+                                                        <path fill="#fff"
+                                                            d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z" />
+                                                    </svg>
+                                                    View instagram
+                                                </a>
+                                            </li>
+                                            <li
+                                                class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
+                                                <span>
+                                                    @username
+                                                </span>
+                                                <a class="text-xs flex items-center gap-2" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                                                        width="24px" height="24px">
+                                                        <radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38"
+                                                            cy="42.035" r="44.899" gradientUnits="userSpaceOnUse">
+                                                            <stop offset="0" stop-color="#fd5" />
+                                                            <stop offset=".328" stop-color="#ff543f" />
+                                                            <stop offset=".348" stop-color="#fc5245" />
+                                                            <stop offset=".504" stop-color="#e64771" />
+                                                            <stop offset=".643" stop-color="#d53e91" />
+                                                            <stop offset=".761" stop-color="#cc39a4" />
+                                                            <stop offset=".841" stop-color="#c837ab" />
+                                                        </radialGradient>
+                                                        <path fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
+                                                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                                                        <radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786"
+                                                            cy="5.54" r="29.813"
+                                                            gradientTransform="matrix(1 0 0 .6663 0 1.849)"
+                                                            gradientUnits="userSpaceOnUse">
+                                                            <stop offset="0" stop-color="#4168c9" />
+                                                            <stop offset=".999" stop-color="#4168c9" stop-opacity="0" />
+                                                        </radialGradient>
+                                                        <path fill="url(#yOrnnhliCrdS2gy~4tD8mb)"
+                                                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                                                        <path fill="#fff"
+                                                            d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z" />
+                                                        <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
+                                                        <path fill="#fff"
+                                                            d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z" />
+                                                    </svg>
+                                                    View instagram
+                                                </a>
+                                            </li>
+                                            <li
+                                                class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
+                                                <span>
+                                                    @username
+                                                </span>
+                                                <a class="text-xs flex items-center gap-2" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                                                        width="24px" height="24px">
+                                                        <radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38"
+                                                            cy="42.035" r="44.899" gradientUnits="userSpaceOnUse">
+                                                            <stop offset="0" stop-color="#fd5" />
+                                                            <stop offset=".328" stop-color="#ff543f" />
+                                                            <stop offset=".348" stop-color="#fc5245" />
+                                                            <stop offset=".504" stop-color="#e64771" />
+                                                            <stop offset=".643" stop-color="#d53e91" />
+                                                            <stop offset=".761" stop-color="#cc39a4" />
+                                                            <stop offset=".841" stop-color="#c837ab" />
+                                                        </radialGradient>
+                                                        <path fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
+                                                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                                                        <radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786"
+                                                            cy="5.54" r="29.813"
+                                                            gradientTransform="matrix(1 0 0 .6663 0 1.849)"
+                                                            gradientUnits="userSpaceOnUse">
+                                                            <stop offset="0" stop-color="#4168c9" />
+                                                            <stop offset=".999" stop-color="#4168c9" stop-opacity="0" />
+                                                        </radialGradient>
+                                                        <path fill="url(#yOrnnhliCrdS2gy~4tD8mb)"
+                                                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                                                        <path fill="#fff"
+                                                            d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z" />
+                                                        <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
+                                                        <path fill="#fff"
+                                                            d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z" />
+                                                    </svg>
+                                                    View instagram
+                                                </a>
+                                            </li>
+                                            <li
+                                                class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
+                                                <span>
+                                                    @username
+                                                </span>
+                                                <a class="text-xs flex items-center gap-2" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                                                        width="24px" height="24px">
+                                                        <radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38"
+                                                            cy="42.035" r="44.899" gradientUnits="userSpaceOnUse">
+                                                            <stop offset="0" stop-color="#fd5" />
+                                                            <stop offset=".328" stop-color="#ff543f" />
+                                                            <stop offset=".348" stop-color="#fc5245" />
+                                                            <stop offset=".504" stop-color="#e64771" />
+                                                            <stop offset=".643" stop-color="#d53e91" />
+                                                            <stop offset=".761" stop-color="#cc39a4" />
+                                                            <stop offset=".841" stop-color="#c837ab" />
+                                                        </radialGradient>
+                                                        <path fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
+                                                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                                                        <radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786"
+                                                            cy="5.54" r="29.813"
+                                                            gradientTransform="matrix(1 0 0 .6663 0 1.849)"
+                                                            gradientUnits="userSpaceOnUse">
+                                                            <stop offset="0" stop-color="#4168c9" />
+                                                            <stop offset=".999" stop-color="#4168c9" stop-opacity="0" />
+                                                        </radialGradient>
+                                                        <path fill="url(#yOrnnhliCrdS2gy~4tD8mb)"
+                                                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                                                        <path fill="#fff"
+                                                            d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z" />
+                                                        <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
+                                                        <path fill="#fff"
+                                                            d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z" />
+                                                    </svg>
+                                                    View instagram
+                                                </a>
+                                            </li>
+                                            <li
+                                                class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
+                                                <span>
+                                                    @username
+                                                </span>
+                                                <a class="text-xs flex items-center gap-2" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                                                        width="24px" height="24px">
+                                                        <radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38"
+                                                            cy="42.035" r="44.899" gradientUnits="userSpaceOnUse">
+                                                            <stop offset="0" stop-color="#fd5" />
+                                                            <stop offset=".328" stop-color="#ff543f" />
+                                                            <stop offset=".348" stop-color="#fc5245" />
+                                                            <stop offset=".504" stop-color="#e64771" />
+                                                            <stop offset=".643" stop-color="#d53e91" />
+                                                            <stop offset=".761" stop-color="#cc39a4" />
+                                                            <stop offset=".841" stop-color="#c837ab" />
+                                                        </radialGradient>
+                                                        <path fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
+                                                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                                                        <radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786"
+                                                            cy="5.54" r="29.813"
+                                                            gradientTransform="matrix(1 0 0 .6663 0 1.849)"
+                                                            gradientUnits="userSpaceOnUse">
+                                                            <stop offset="0" stop-color="#4168c9" />
+                                                            <stop offset=".999" stop-color="#4168c9" stop-opacity="0" />
+                                                        </radialGradient>
+                                                        <path fill="url(#yOrnnhliCrdS2gy~4tD8mb)"
+                                                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                                                        <path fill="#fff"
+                                                            d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z" />
+                                                        <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
+                                                        <path fill="#fff"
+                                                            d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z" />
+                                                    </svg>
+                                                    View instagram
+                                                </a>
+                                            </li>
+                                            <li
+                                                class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
+                                                <span>
+                                                    @username
+                                                </span>
+                                                <a class="text-xs flex items-center gap-2" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                                                        width="24px" height="24px">
+                                                        <radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38"
+                                                            cy="42.035" r="44.899" gradientUnits="userSpaceOnUse">
+                                                            <stop offset="0" stop-color="#fd5" />
+                                                            <stop offset=".328" stop-color="#ff543f" />
+                                                            <stop offset=".348" stop-color="#fc5245" />
+                                                            <stop offset=".504" stop-color="#e64771" />
+                                                            <stop offset=".643" stop-color="#d53e91" />
+                                                            <stop offset=".761" stop-color="#cc39a4" />
+                                                            <stop offset=".841" stop-color="#c837ab" />
+                                                        </radialGradient>
+                                                        <path fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
+                                                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                                                        <radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786"
+                                                            cy="5.54" r="29.813"
+                                                            gradientTransform="matrix(1 0 0 .6663 0 1.849)"
+                                                            gradientUnits="userSpaceOnUse">
+                                                            <stop offset="0" stop-color="#4168c9" />
+                                                            <stop offset=".999" stop-color="#4168c9" stop-opacity="0" />
+                                                        </radialGradient>
+                                                        <path fill="url(#yOrnnhliCrdS2gy~4tD8mb)"
+                                                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                                                        <path fill="#fff"
+                                                            d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z" />
+                                                        <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
+                                                        <path fill="#fff"
+                                                            d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z" />
+                                                    </svg>
+                                                    View instagram
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-8 flex flex-col items-center justify-center gap-4">
-                            <div class="p-1 rounded-[calc(var(--btn-border-radius)+4px)] bg-gray-950/5 border dark:border-white/10 dark:bg-white/5">
-                                <button
-                                    id="submit"
-                                    class="*:select-none dark:shadow-primary-500/10 *:disabled:opacity-20 disabled:*:text-gray-300 disabled:dark:*:text-gray-700 dark:*:disabled:!text-slate-100 group relative z-[1] flex h-11 items-center justify-center gap-1.5 rounded-[--btn-border-radius] border border-primary-600 bg-primary-500 px-4 text-base text-slate-100 shadow-md shadow-primary-200 before:absolute before:inset-0 before:rounded-[calc(var(--btn-border-radius)-1px)] before:border before:border-primary-500 before:bg-gradient-to-b before:from-primary-600 hover:bg-primary-600 active:bg-primary-700 disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-950/40 disabled:before:border-transparent disabled:before:bg-gray-100 disabled:before:from-transparent dark:border-0 dark:bg-primary-600 dark:before:border-0 dark:before:border-t dark:before:border-primary-400 dark:before:shadow-inner dark:before:shadow-white/10 dark:hover:bg-primary-700 dark:active:bg-primary-800 dark:active:before:from-primary-700 dark:disabled:border dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:disabled:before:bg-gray-900 dark:disabled:before:from-gray-900 dark:disabled:before:shadow-none [&>*:not(.sr-only)]:relative"
-                                >
-                                    <svg class="size-5 relative" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path class="opacity-20 dark:opacity-50" d="M7.40705 15L5.10627 16.7375C5.0234 16.8039 4.92499 16.848 4.82033 16.8658C4.71567 16.8836 4.6082 16.8744 4.50806 16.8392C4.40793 16.8039 4.31842 16.7437 4.24798 16.6643C4.17755 16.5849 4.12851 16.4888 4.10549 16.3852L3.13986 12.0391C3.11906 11.9458 3.11993 11.8489 3.14241 11.756C3.16489 11.6631 3.20839 11.5766 3.26955 11.5031L5.63752 8.66484C5.5469 10.4883 5.99221 12.6117 7.40705 15ZM16.7305 11.5031L14.3625 8.66484C14.4571 10.4883 14.0078 12.6117 12.593 15L14.8938 16.7375C14.9766 16.8039 15.075 16.848 15.1797 16.8658C15.2844 16.8836 15.3918 16.8744 15.492 16.8392C15.5921 16.8039 15.6816 16.7437 15.7521 16.6643C15.8225 16.5849 15.8715 16.4888 15.8946 16.3852L16.8602 12.0391C16.881 11.9458 16.8801 11.8489 16.8576 11.756C16.8351 11.6631 16.7917 11.5766 16.7305 11.5031Z" fill="currentColor"></path>
-                                        <path
-                                            d="M11.875 17.5C11.875 17.6658 11.8092 17.8247 11.6919 17.9419C11.5747 18.0591 11.4158 18.125 11.25 18.125H8.75C8.58424 18.125 8.42527 18.0591 8.30806 17.9419C8.19085 17.8247 8.125 17.6658 8.125 17.5C8.125 17.3342 8.19085 17.1753 8.30806 17.0581C8.42527 16.9408 8.58424 16.875 8.75 16.875H11.25C11.4158 16.875 11.5747 16.9408 11.6919 17.0581C11.8092 17.1753 11.875 17.3342 11.875 17.5ZM10 8.75C10.1854 8.75 10.3667 8.69501 10.5208 8.592C10.675 8.48899 10.7952 8.34257 10.8661 8.17126C10.9371 7.99996 10.9557 7.81146 10.9195 7.6296C10.8833 7.44774 10.794 7.2807 10.6629 7.14959C10.5318 7.01847 10.3648 6.92919 10.1829 6.89301C10.001 6.85684 9.81254 6.8754 9.64123 6.94636C9.46993 7.01732 9.32351 7.13748 9.2205 7.29165C9.11748 7.44582 9.0625 7.62708 9.0625 7.8125C9.0625 8.06114 9.16127 8.2996 9.33709 8.47541C9.5129 8.65123 9.75136 8.75 10 8.75ZM17.4703 12.1742L16.5047 16.5203C16.4589 16.7267 16.3615 16.9181 16.2216 17.0766C16.0817 17.2351 15.9039 17.3555 15.7048 17.4266C15.5057 17.4977 15.2918 17.5172 15.0832 17.4831C14.8745 17.4491 14.6779 17.3627 14.5117 17.232L12.3836 15.625H7.61797L5.48828 17.232C5.3221 17.3627 5.12549 17.4491 4.91684 17.4831C4.70819 17.5172 4.49431 17.4977 4.29522 17.4266C4.09613 17.3555 3.91832 17.2351 3.77842 17.0766C3.63853 16.9181 3.54112 16.7267 3.49531 16.5203L2.52969 12.1742C2.48873 11.9877 2.4908 11.7943 2.53574 11.6087C2.58068 11.4231 2.66731 11.2502 2.78906 11.1031L5.02031 8.42656C5.0952 7.44292 5.32102 6.47666 5.68984 5.56172C6.69766 3.03515 8.50234 1.45 9.23437 0.885935C9.45348 0.716157 9.72281 0.624023 10 0.624023C10.2772 0.624023 10.5465 0.716157 10.7656 0.885935C11.4953 1.45 13.3023 3.03515 14.3102 5.56172C14.679 6.47666 14.9048 7.44292 14.9797 8.42656L17.2109 11.1031C17.3327 11.2502 17.4193 11.4231 17.4643 11.6087C17.5092 11.7943 17.5113 11.9877 17.4703 12.1742ZM7.76797 14.375H12.232C13.882 11.4422 14.1906 8.63437 13.1492 6.025C12.2305 3.72187 10.507 2.26562 10 1.875C9.49141 2.26562 7.76797 3.72187 6.84922 6.025C5.80937 8.63437 6.11797 11.4422 7.76797 14.375ZM6.59609 14.832C5.75495 13.3034 5.24453 11.801 5.06484 10.325L3.75 11.9031L4.71562 16.25L4.72969 16.2398L6.59609 14.832ZM16.25 11.9031L14.9352 10.325C14.757 11.7979 14.2477 13.3003 13.407 14.832L15.2703 16.2383L15.2844 16.2484L16.25 11.9031Z"
-                                            fill="currentColor"
-                                        ></path>
-                                    </svg>
-                                    <span class="text-nowrap">Generate List</span></button
-                                >
-                            </div>
-                            <button class="hidden *:select-none *:disabled:opacity-20 dark:*:disabled:!text-slate-100 dark:hover:bg-gray-500/15 group h-9 items-center justify-center gap-1.5 rounded-[--btn-border-radius] bg-gray-100 px-3 text-base text-gray-800 hover:bg-gray-200/75 active:bg-gray-100 disabled:border disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-950 dark:bg-gray-500/10 dark:text-gray-300 dark:active:bg-gray-500/10 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 [&>*:not(.sr-only)]:relative">
-                                <span class="text-sm">Learn more</span>
-                                <svg class="-mr-1" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="m19 12l12 12l-12 12"/></svg>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="-mx-6 relative mt-8 sm:mt-12 max-w-xl sm:mx-auto">
-                        <div class="absolute inset-0 -top-8 left-1/2 -z-20 h-56 w-full -translate-x-1/2 dark:opacity-10 [background-image:linear-gradient(to_bottom,transparent_98%,theme(colors.gray.200/75%)_98%),linear-gradient(to_right,transparent_94%,_theme(colors.gray.200/75%)_94%)] [background-size:16px_35px] [mask:radial-gradient(black,transparent_95%)]"></div>
-                        <div class="absolute top-12 inset-x-0 w-2/3 h-1/3 -z-[1] rounded-full bg-primary-300 dark:bg-white/10 mx-auto blur-3xl"></div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section>
-            <div class="mx-auto px-6 max-w-2xl">
-                <h3 id="accountsThatDontFollowBack" class="text-slate-100 font-semibold mb-3 text-sm hidden"><span id="accountsCount" class="hidden"></span> accounts that don't follow you back</h3>
-                <div class="text-slate-100 text-sm overflow-hidden">
-                    <ul id="not-following-back-list" class="flex flex-col gap-3">
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section id="help">
-            <div class="py-12 lg:py-36">
+            </section>
+            <section class="mt-4 lg:mt-12" id="faq-1">
                 <div class="px-6 m-auto max-w-6xl 2xl:px-0 text-gray-500">
                     <div class="grid gap-12 md:gap-0 md:grid-cols-1 lg:grid-cols-5 lg:gap-24">
-                        <div class="lg:col-span-2">
+                        <div class="lg:col-span-12">
                             <div class="md:pr-6 lg:pr-0">
-                                <h2 class="text-2xl text-gray-950 dark:text-slate-100 font-semibold">How use InstaListDiff?</h2>
+                                <h2 class="text-2xl text-gray-950 dark:text-slate-100 font-semibold">Frequently asked
+                                    questions</h2>
                             </div>
+                            <ul
+                                class="mt-3 divide-y border-y border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] divide-[--ui-light-border-color] dark:divide-[--ui-dark-border-color] *:py-3 *:gap-3 text-gray-700 dark:text-gray-300">
+                                <li class="font-semibold">
+                                    Why is it safe?
+                                    <span class="block mt-3 font-thin">Client-side Processing: Our app operates entirely
+                                        on the client side, meaning your data never leaves your device.
+                                        <br />When you paste your JSON code into our website, all processing happens
+                                        locally in your browser.
+                                        This ensures that your sensitive information remains under your control at all
+                                        times.<br /><br />
+                                        No Database Storage: We don't store any of your data in a database. Once you
+                                        close the app or refresh the page, your JSON code is gone. This eliminates any
+                                        risk of data exposure or unauthorized access to your information.<br /><br />
+                                        Transparent Operations: We believe in transparency. Our app doesn't perform any
+                                        hidden operations or transmit your data to external servers. You can trust that
+                                        what you input into our app stays within your browser and doesn't go anywhere
+                                        else.
+                                        Your security is our top priority. If you have any further questions or concerns
+                                        about the safety of our app, please don't hesitate to reach out to us.</span>
+                                </li>
+                                <li class="font-semibold">
+                                    Do I need to pay?
+                                    <span class="block mt-3 font-thin">Absolutely not! Our app is completely free to
+                                        use. We believe in providing accessible tools for everyone without any cost
+                                        barriers. So feel free to use our app as much as you need without worrying about
+                                        any charges.</span>
+                                </li>
+                                <li class="font-semibold">
+                                    Why shouldn't I use third-party apps to find unfollowers on Instagram?
+                                    <span class="block mt-3 font-thin">
+                                        Using third-party apps for this purpose can pose risks:<br /><br />
 
-                            <ul class="mt-3 divide-y border-y border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] divide-[--ui-light-border-color] dark:divide-[--ui-dark-border-color] *:py-3 *:gap-3 text-gray-700 dark:text-gray-300">
-                                <li class="font-semibold">
-                                    Step 1. 
-                                    Download Your Data from Instagram:
-                                    <span class="block mt-3 font-thin">
-                                        First, you'll need to download your data from Instagram. Instagram provides an option to download certain information about your account, including your list of followers and followings, in a JSON format. This can be done through your Instagram settings.
-                                    </span>
-                                    <span class="mt-2 mb-0 flex items-center gap-[6px]">
-                                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
-                                        <span class="block"><a class="text-slate-100 mt-2 text-sm underline" target="_blank" rel="noreferrer" href="https://help.instagram.com/181231772500920">You can view the steps from Instagram's website.</a></span>
-                                    </span>
-                                    <span class="text-sm mt-3 flex items-center">To see all results, in Date range choose "All time".</span>
-                                </li>
-                                <li class="font-semibold">
-                                    Step 2. 
-                                    Paste JSON Code:
-                                    <span class="block mt-3 font-thin">
-                                        You'll see two textboxes labeled "Followers" and "Followings." Simply paste the JSON code containing your list of followers into the "Followers" box, and paste the JSON code containing your list of followings into the "Followings" box.
-                                    </span>
-                                </li>
-                                <li class="font-semibold">
-                                    Step 3. 
-                                    Analyze the Results:
-                                    <span class="block mt-3 font-thin">
-                                        After pasting the JSON code, click on the "Compare" or "Find Difference" button to analyze the data. InstaListDiff will then process the information and provide you with the differences between your followers and followings.
-                                    </span>
-                                </li>
-                                <li class="font-semibold">
-                                    Step 4. 
-                                    Review the Results:
-                                    <span class="block mt-3 font-thin">
-                                        You'll receive a clear breakdown of who follows you but you don't follow back, and vice versa. This can be helpful for managing your Instagram connections and understanding your network better.
+                                        Security: They may require your login credentials, risking account security.
+                                        <br />
+                                        Terms of Service: It might violate Instagram's terms, leading to account
+                                        suspension.<br />
+                                        Accuracy: Results may be unreliable due to API limitations.<br />
+                                        Privacy: Some apps collect and share personal data, compromising privacy.<br />
+                                        For safety, it's best to use Instagram's built-in features or trusted tools that
+                                        prioritize security and privacy.<br />
                                     </span>
                                 </li>
                             </ul>
                         </div>
-                        <div class="inline-flex items-center mt-4 lg:mt-12 lg:mt-0 h-max lg:col-span-3 border rounded-[--card-border-radius] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color]">
-                            <div class="inline-flex flex-col w-full gap-3 p-6 text-gray-600 dark:text-gray-400 *:rounded-[calc(var(--card-border-radius)/2)]">
-                                    <p class="text-slate-500 font-thin mb-1 text-xs">Example:</p>
-                                    <h3 class="text-slate-100 font-semibold mb-3 text-sm">Accounts that don't follow you back</h3>
-                                    <div class="text-slate-100 text-sm w-full">
-                                        <ul id="not-following-back-list" class="flex flex-col gap-3">
-                                            <li class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
-                                                <span>
-                                                    @username
-                                                  </span>
-                                                  <a class="text-xs flex items-center gap-2" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
-                                                    View instagram
-                                                  </a>
-                                            </li>
-                                            <li class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
-                                                <span>
-                                                    @username
-                                                  </span>
-                                                  <a class="text-xs flex items-center gap-2" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
-                                                    View instagram
-                                                  </a>
-                                            </li>
-                                            <li class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
-                                                <span>
-                                                    @username
-                                                  </span>
-                                                  <a class="text-xs flex items-center gap-2" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
-                                                    View instagram
-                                                  </a>
-                                            </li>
-                                            <li class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
-                                                <span>
-                                                    @username
-                                                  </span>
-                                                  <a class="text-xs flex items-center gap-2" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
-                                                    View instagram
-                                                  </a>
-                                            </li>
-                                            <li class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
-                                                <span>
-                                                     @username
-                                                  </span>
-                                                  <a class="text-xs flex items-center gap-2" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
-                                                    View instagram
-                                                  </a>
-                                            </li>
-                                            <li class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
-                                                <span>
-                                                     @username
-                                                  </span>
-                                                  <a class="text-xs flex items-center gap-2" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
-                                                    View instagram
-                                                  </a>
-                                            </li>
-                                            <li class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
-                                                <span>
-                                                     @username
-                                                  </span>
-                                                  <a class="text-xs flex items-center gap-2" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
-                                                    View instagram
-                                                  </a>
-                                            </li>
-                                            <li class="flex items-center justify-between lg:col-span-3 border bg-white dark:bg-[--card-dark-bg] rounded-[6px] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] py-2 px-4">
-                                                <span>
-                                                     @username
-                                                  </span>
-                                                  <a class="text-xs flex items-center gap-2" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
-                                                    View instagram
-                                                  </a>
-                                            </li>
-                                            
-                                        </ul>
-                                    </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="mt-4 lg:mt-12" id="faq-1">
-            <div class="px-6 m-auto max-w-6xl 2xl:px-0 text-gray-500">
-                <div class="grid gap-12 md:gap-0 md:grid-cols-1 lg:grid-cols-5 lg:gap-24">
-            <div class="lg:col-span-12">
-                <div class="md:pr-6 lg:pr-0">
-                    <h2 class="text-2xl text-gray-950 dark:text-slate-100 font-semibold">Frequently asked questions</h2>
+            </section>
+        </main>
+
+        <footer
+            class="mt-12 lg:mt-24 rounded-xl border border-[--ui-light-border-color] dark:border-[--ui-dark-border-color]">
+            <div class="max-w-6xl mx-auto space-y-16 px-6 py-16 text-gray-600 2xl:px-0">
+                <div class="flex gap-6">
+                    <div>
+                        <ul class="mt-4 list-inside space-y-4">
+                            <li>
+                                <a href="privacy-policy.html"
+                                    class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500">Privacy
+                                    Policy</a>
+                            </li>
+                            <li>
+                                <a href="terms-and-conditions.html"
+                                    class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500">Terms
+                                    & Conditions</a>
+                            </li>
+                            <li>
+                                <a href="mailto:hello@erindhoxha.dev"
+                                    class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <ul class="mt-3 divide-y border-y border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] divide-[--ui-light-border-color] dark:divide-[--ui-dark-border-color] *:py-3 *:gap-3 text-gray-700 dark:text-gray-300">
-                    <li class="font-semibold">
-                        Why is it safe?
-                        <span class="block mt-3 font-thin">Client-side Processing: Our app operates entirely on the client side, meaning your data never leaves your device. 
-                            <br />When you paste your JSON code into our website, all processing happens locally in your browser. 
-                            This ensures that your sensitive information remains under your control at all times.<br /><br />
-                            No Database Storage: We don't store any of your data in a database. Once you close the app or refresh the page, your JSON code is gone. This eliminates any risk of data exposure or unauthorized access to your information.<br /><br />
-                            Transparent Operations: We believe in transparency. Our app doesn't perform any hidden operations or transmit your data to external servers. You can trust that what you input into our app stays within your browser and doesn't go anywhere else.
-Your security is our top priority. If you have any further questions or concerns about the safety of our app, please don't hesitate to reach out to us.</span>
-                    </li>
-                    <li class="font-semibold">
-                        Do I need to pay?
-                        <span class="block mt-3 font-thin">Absolutely not! Our app is completely free to use. We believe in providing accessible tools for everyone without any cost barriers. So feel free to use our app as much as you need without worrying about any charges.</span>
-                    </li>
-                    <li class="font-semibold">
-                        Why shouldn't I use third-party apps to find unfollowers on Instagram?
-                        <span class="block mt-3 font-thin">
-                            Using third-party apps for this purpose can pose risks:<br /><br />
-
-Security: They may require your login credentials, risking account security. <br />
-Terms of Service: It might violate Instagram's terms, leading to account suspension.<br />
-Accuracy: Results may be unreliable due to API limitations.<br />
-Privacy: Some apps collect and share personal data, compromising privacy.<br />
-For safety, it's best to use Instagram's built-in features or trusted tools that prioritize security and privacy.<br />
-                        </span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    </section>
-    </main>
-
-    <footer class="mt-12 lg:mt-24 rounded-xl border border-[--ui-light-border-color] dark:border-[--ui-dark-border-color]">
-        <div class="max-w-6xl mx-auto space-y-16 px-6 py-16 text-gray-600 2xl:px-0">
-            <div class="flex gap-6">
-                <div>
-                    <ul class="mt-4 list-inside space-y-4">
-                        <li>
-                            <a href="privacy-policy.html" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="terms-and-conditions.html" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500">Terms & Conditions</a>
-                        </li>
-                        <li>
-                            <a href="mailto:hello@erindhoxha.dev" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500">Contact</a>
-                        </li>
-                    </ul>
+                <div class="flex items-center justify-between rounded-md bg-gray-100 px-6 py-3 dark:bg-gray-900">
+                    <span class="text-gray-600 dark:text-gray-400">&copy; InstaListDiff 2024 - Present</span>
                 </div>
             </div>
-            <div class="flex items-center justify-between rounded-md bg-gray-100 px-6 py-3 dark:bg-gray-900">
-                <span class="text-gray-600 dark:text-gray-400">&copy; InstaListDiff 2024 - Present</span>
-            </div>
-        </div>
-    </footer>
-    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="erindhoxha" data-description="Support me on Buy me a coffee!" data-message="" data-color="#FF813F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
-    <script type="module" src="./main.js"></script>
+        </footer>
+        <script data-name="BMC-Widget" data-cfasync="false"
+            src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="erindhoxha"
+            data-description="Support me on Buy me a coffee!" data-message="" data-color="#FF813F" data-position="Right"
+            data-x_margin="18" data-y_margin="18"></script>
+        <script type="module" src="./main.js"></script>
     </body>
+
 </html>
